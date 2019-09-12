@@ -1,0 +1,246 @@
+@font-face{
+  font-family:'JohnnyTorch';
+  src: url("./fonts/johnnytorch.ttf") format('truetype');
+}
+@font-face{
+  font-family:'JohnnyTorchNoFill';
+  src: url("./fonts/johnnytorch3dital.ttf") format('truetype');
+}
+/* ICONS FONT */
+
+
+html{
+  font-size:15px;
+}
+fieldset{
+  border:none;
+}
+.App {
+  text-align: center;
+  display:flex;
+  flex-direction:column;
+  width:90vw;
+  height:90vh;
+  margin:0 auto;
+}
+
+
+.navbar{
+  width:100%;
+  box-sizing:border-box;
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom:10px;
+}
+
+.navbar__website__title{
+  font-family: 'JohnnyTorch';
+  font-size:3.5em;
+  font-weight:bolder;
+  letter-spacing: .3em;
+  color:darkred;
+  -webkit-text-stroke: .05em gold;
+  margin:0 10px 0 0
+}
+
+
+/* SEARCHBAR  */
+.searchbar__form{
+  width:100%;
+  display:flex;
+  margin-bottom:6vh;
+}
+.searchbar__label{
+  font-family:"Concert One";
+  font-size:2.4em;
+  text-transform: uppercase;
+  font-weight:lighter;
+  margin-right:3px;
+}
+.searchbar__fieldset{
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  padding:0;
+  margin:0;
+}
+.searchbar__input{
+  border:3px solid black; 
+  font-family:"Concert One";
+  font-size:1.8em;
+  text-transform:uppercase;
+  border-radius:.25em;
+  width:50%;
+  flex-grow:2;
+  margin-right:2px;
+}
+.searchbar__button{
+  padding:0px;
+  border:none;
+  background:none;
+}
+.searchbar__icon {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2.4em;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  box-sizing: border-box;
+
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+}
+
+
+/* NAVBAR INFORMATION  */
+.navbar__link{
+  font-family: "JohnnyTorch";
+  text-decoration:none;
+  font-size: 2.2em;
+  text-transform:uppercase;
+color:black;
+-webkit-text-stroke: .05em gold;
+}
+
+
+main{
+  height:100%;
+  box-sizing:border-box;
+  display:flex;
+  flex-direction:column;
+  font-family: 'Concert One';
+}
+header,footer{
+  margin:0;
+}
+
+.main__banner{
+  box-sizing:border-box;
+  display:flex;
+}
+/* NEWS COMPONENT */
+.news{
+  height:100%;
+  width:40vw;
+  box-sizing:border-box;
+  display: flex;
+  flex-direction:column;
+  justify-content: flex-start;
+  align-items: center;
+  padding:2px;
+}
+.news__item{
+  width: 85%;
+  box-sizing: border-box;
+}
+.news__header{
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  margin:.5em;
+}
+.news__type{
+  font-size:3.0em;
+  font-weight:2.6em;
+  text-transform: uppercase;
+  border-bottom:3px black solid;
+  font-weight:bolder;
+  font-family: 'JohnnyTorchNoFill';
+  margin:0 0 5vh 0;
+}
+.news__title{
+  text-transform:uppercase;
+  font-weight:bolder;
+  font-size:1.6em;
+  text-decoration:none;
+  color:black;
+  flex-basis: 1;
+}
+.news__image{
+  display:block;
+  margin:5px auto;
+
+}
+
+.news__title:hover{
+  color:darkblue;
+  text-decoration: underline;
+}
+
+.news__description{
+  font-size:1.0em;
+  font-family:'Concert One';
+  box-sizing:border-box;
+  width:85%;
+  margin:5px auto;
+}
+.news__author{
+  color:darkred;
+  font-weight:bolder;
+  font-size:1.2em;
+  text-transform:uppercase;
+  letter-spacing: .05em;
+  font-family:"Concert One";
+}
+
+
+
+/* TRENDING */
+
+.trending__header{
+  font-size:2.0em;
+  font-weight:2.0em;
+  text-transform: uppercase;
+  font-weight:bolder;
+  font-family: 'JohnnyTorchNoFill';
+  margin:0;
+  border-bottom:3px black solid;
+}
+
+
+/* HIGHEST */
+.trending,.highestRated{
+  box-sizing:border-box;
+  width:30%;
+  padding:2px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+ 
+}
+.highestRated__header{
+  font-size:2.0em;
+  font-weight:2.6em;
+  text-transform: uppercase;
+  font-weight:bolder;
+  font-family: 'JohnnyTorchNoFill';
+  margin:0;
+  width:90%;
+  border-bottom:3px black solid;
+}
+
+.trending__list,.highest__list{
+  box-sizing: border-box;
+  
+}
+.trending__recipe,.highest__recipe{
+  text-align:left;
+}
+.trending__link,.highest__link{
+  text-decoration:none;
+  color:black;
+}
+.trending__link:hover,.highest__link:hover{
+  text-decoration:underline;
+}
