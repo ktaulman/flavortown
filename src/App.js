@@ -16,9 +16,9 @@ class App extends React.Component{
     }
   }
   componentDidMount(){
-        let p1=fetch('http://localhost:3000/news')
-        let p2=fetch('http://localhost:3000/trending')
-        let p3=fetch('http://localhost:3000/highest')
+        let p1=fetch('https://desolate-tor-39614.herokuapp.com/news')
+        let p2=fetch('https://desolate-tor-39614.herokuapp.com/trending')
+        let p3=fetch('https://desolate-tor-39614.herokuapp.com/highest')
    
     Promise.all([p1,p2,p3])
     .then(
