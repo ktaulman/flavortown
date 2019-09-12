@@ -37,6 +37,7 @@ app.get('/search',(req,res)=>{
    axios.get(`http://www.food2fork.com/api/search?${queryString}&page=1`).then(data=>res.json(data.data))
 })
 
+//For Trending Recipes 
 app.get('/trending',(req,res)=>{
     let queryString=querystring.stringify({
         key:'f6d2ff5941cc8b88fe90d79c3a0da4fd',
