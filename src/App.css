@@ -276,17 +276,34 @@ header,footer{
   .searchbar__form{
     flex-direction:column;
   }
+  .searchbar{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
   .searchbar__label{
     font-size:28px;
   }
-  
+  .searchbar__input{
+    font-size:16px;
+    width:250px;
+    flex-grow:0;
+  }
   .main__banner{
     flex-direction: column;
   }
   .news{
     width:100%;
   }
+  .news__description{
+    font-size:14px;
+  }
+
   .trending,.highestRated{
     width:100%;
+  }
+  .trending__header,.highestRated__header{
+    border:none;
   }
 }
