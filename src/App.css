@@ -52,6 +52,65 @@ fieldset{
   justify-content: space-evenly;
    flex-shrink:0;
 }
+.navbar__link{
+  font-family: "JohnnyTorch";
+  text-decoration:none;
+  font-size: 2.2em;
+  text-transform:uppercase;
+color:black;
+-webkit-text-stroke: .05em gold;
+}
+/* Register and SignIn Componens */
+.signInDD__wrapper{
+  
+}
+.signInDD__header{
+  display:inline;
+  z-index:1;
+}
+.signInDD__title{
+  font-family: "JohnnyTorch";
+  text-decoration:none;
+  font-size: 2.2rem;
+  text-transform:uppercase;
+  color:black;
+  -webkit-text-stroke: .05rem gold;
+  cursor:pointer;
+  margin:0;
+}
+
+.signInDD__list{
+  margin:0;
+  position: absolute;
+  padding:0;
+  background:white;
+  list-style-type:none;
+  font-family:"Concert One";
+  display:block;
+}
+
+.signInDD__item{
+
+}
+
+.signInDD__label{
+
+}
+.signInDD__input{
+  font-family:'Concert-One'
+}
+
+.signInDD__button{
+  font-family:"Concert One";
+  background:darkred;
+  color:white;
+}
+
+.DD--clicked{
+  background:#FFFFFF;
+}
+
+
 
 
 /* SEARCHBAR  */
@@ -96,8 +155,6 @@ fieldset{
   white-space: nowrap;
   direction: ltr;
   box-sizing: border-box;
-
-
   /* Support for all WebKit browsers. */
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -106,15 +163,8 @@ fieldset{
 }
 
 
-/* NAVBAR INFORMATION  */
-.navbar__link{
-  font-family: "JohnnyTorch";
-  text-decoration:none;
-  font-size: 2.2em;
-  text-transform:uppercase;
-color:black;
--webkit-text-stroke: .05em gold;
-}
+
+
 
 
 main{
@@ -250,6 +300,8 @@ header,footer{
 .trending__link:hover,.highest__link:hover{
   text-decoration:underline;
 }
+
+/* Responsive UI for the website */
 @media (max-width:1050px){
   .navbar{
     flex-direction:column;
@@ -272,7 +324,6 @@ header,footer{
   }
   .navbar__linksContainer{
     flex-direction:column;
-
     align-items: center;
   }
   .navbar__link{
