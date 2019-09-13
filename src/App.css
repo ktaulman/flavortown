@@ -20,7 +20,7 @@ fieldset{
   display:flex;
   flex-direction:column;
   width:90vw;
-  height:100vh;
+  
   margin:0 auto;
 }
 
@@ -32,6 +32,7 @@ fieldset{
   justify-content: space-around;
   align-items: center;
   margin-bottom:10px;
+   flex-shrink:0;
 }
 
 .navbar__title{
@@ -41,13 +42,15 @@ fieldset{
   letter-spacing: .3em;
   color:darkred;
   -webkit-text-stroke: .05em gold;
-  margin:0 10px 0 0
+  margin:0 10px 0 0;
+  flex-shrink:0;
 }
 .navbar__linksContainer{
   flex-basis: 50%;
   display:flex;
   flex-direction: row;
   justify-content: space-evenly;
+   flex-shrink:0;
 }
 
 
@@ -73,6 +76,7 @@ fieldset{
   border-radius:.25em;
   width:50%;
   flex-grow:2;
+  flex-shrink:0;
   margin-right:2px;
 }
 .searchbar__button{
@@ -119,6 +123,7 @@ main{
   display:flex;
   flex-direction:column;
   font-family: 'Concert One';
+  flex-shrink:0;
 }
 header,footer{
   margin:0;
@@ -127,16 +132,18 @@ header,footer{
 .main__banner{
   box-sizing:border-box;
   display:flex;
+   flex-shrink:0;
 }
 /* NEWS COMPONENT */
 .news{
   width:40vw;
-  box-sizing:border-box;
+  box-sizing:content-box;
   display: flex;
   flex-direction:column;
   justify-content: flex-start;
   align-items: center;
   padding:2px;
+   flex-shrink:0;
 }
 .news__item{
   width: 85%;
@@ -293,8 +300,6 @@ header,footer{
   }
   .main__banner{
     flex-direction: column;
-    height:100%;
-
   }
   .news{
     width:100%;
