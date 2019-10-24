@@ -1,78 +1,80 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './App.css';
-import NavBar from './components/NavBar';
-import SearchBar from './components/SearchBar';
-import FoodNews from './components/FoodNews';
-import Trending from './components/Trending';
-import Highest from './components/Highest';
 
-class App extends React.Component{
-  constructor(props){
-    super(props);
-    this.state={
-      newsFeed:{},
-      trendingRecipes:[],
-      highestRecipes:[]
+//Containers
+import Main from "./containers/Main";
+import Header from './containers/Header';
+import Footer from './containers/Footer';
+
+//Components
+import News from './components/News';
+import SearchBar from './components/SearchBar';
+import Trending from './components/Trending';
+import Highest from "./components/Highest";
+import Placeholder from './components/Placeholder'
+import BannerAd from './components/BannerAd';
+import PlaceHolderNews from './components/PlaceholderNews';
+import Random from './components/Random'
+
+
+
+
+export default function App (){
+  const [isGuyClicked,setIsGuyClicked]=useState(false);
+
+
+  function SwitchButton(){
+
+    function handleSwitch(){
+      console.log('handleswitch clicked')
+      setIsGuyClicked(!isGuyClicked);
     }
-  }
-  componentDidMount(){
-        let p1=fetch('https://desolate-tor-39614.herokuapp.com/news')
-        let p2=fetch('https://desolate-tor-39614.herokuapp.com/trending')
-        let p3=fetch('https://desolate-tor-39614.herokuapp.com/highest')
-   
-    Promise.all([p1,p2,p3])
-    .then(
-      ([res1,res2,res3])=>{
-        Promise.all([
-          res1.json(),
-          res2.json(),
-          res3.json()
-        ])
-        .then(([data1,data2,data3])=>{
-          this.setState({newsFeed:data1});
-          this.setState({trendingRecipes:data2});
-          this.setState({highestRecipes:data3});
-          console.log("data1",data1);
-          console.log("data2",data2);
-          console.log("data3",data3)
-        })
-      }
+
+    return(
+      <div className='switchButton'>
+          <img src="https://myrealdomain.com/images/guy-fieri-png-1.png" width="100px" height="100px" alt='' className="switchButton__image" />
+        <button className='switchButton__button' onClick={()=>handleSwitch()}>
+        Guy! I need a Recipe 
+        
+        </button>
+      </div>
+  
     )
   }
 
-  render(){
-    const{newsFeed,trendingRecipes,highestRecipes}=this.state;
-   return (
-    <div className="App">
+  return(
+    <div className="app" id='app'>
 
-      <NavBar/>
-      <SearchBar />
-       
-      <main className='main'>
-        {newsFeed.author?
-        <section className="main__banner">
-          <FoodNews
-            data={newsFeed}
-            source={newsFeed.source.name}
-          />
+      <Header>
+        <h1 className="title">FlavorTown</h1>
+        <SearchBar /> 
+      </Header>
+      
+      {!isGuyClicked?
+      <Main>
+      <BannerAd src="http://realpants.com/wp-content/uploads/2015/03/648x300xpromo-guy-fieri-savory-sausages.jpg.pagespeed.ic_.5TFvSsrJ8x.jpg" />
+        <Random />
         
-          <Trending 
-            data={trendingRecipes}
-          />
+      </Main>
+      :
+      <Main>
+        {/* <News /> */}
+        <PlaceHolderNews />
+        <BannerAd src="http://realpants.com/wp-content/uploads/2015/03/648x300xpromo-guy-fieri-savory-sausages.jpg.pagespeed.ic_.5TFvSsrJ8x.jpg" />
+  
+       
+        
+          <Trending /> 
+          <Highest /> 
+      </Main>
+      }
 
-          <Highest 
-            data={highestRecipes}
-          />
-        </section>
-        :
-        <div></div>
-        }
-      </main>
-</div>
+
+    <Footer>
+        <SwitchButton />
+    </Footer>
+    </div>
   )
 }
-}
- 
 
 
-export default App;

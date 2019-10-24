@@ -6,7 +6,21 @@
   font-family:'JohnnyTorchNoFill';
   src: url("./fonts/johnnytorch3dital.ttf") format('truetype');
 }
-/* ICONS FONT */
+
+@keyframes blink {
+  50% {
+    opacity: 0.0;
+  }
+}
+@-webkit-keyframes blink {
+  50% {
+    opacity: 0.0;
+  }
+}
+.blink {
+  animation: blink 3s step-start 0s infinite;
+  -webkit-animation: blink 3s step-start 0s infinite;
+}
 
 
 html{
@@ -15,74 +29,120 @@ html{
 fieldset{
   border:none;
 }
-.App {
-  text-align: center;
-  display:flex;
-  flex-direction:column;
-  width:90vw;
-  
-  margin:0 auto;
+body{
+  padding:2%;
+  width:100%;
+}
+header,footer{
+  margin:0;
 }
 
 
-.navbar{
-  width:100%;
+/* CONTAINERS */
+
+.app{
   box-sizing:border-box;
   display:flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-bottom:10px;
-   flex-shrink:0;
+  flex-direction:column;
+  font-family: 'Concert One';
+  width:100%;
+  overflow:hidden;
 }
 
-.navbar__title{
-  font-family: 'JohnnyTorch';
-  font-size:3.5em;
-  font-weight:bolder;
-  letter-spacing: .3em;
-  color:darkred;
-  -webkit-text-stroke: .05em gold;
-  margin:0 10px 0 0;
-  flex-shrink:0;
+.header{
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width:100%;
+  margin-top:10px;
+  margin-bottom:30px;
 }
-.navbar__linksContainer{
-  flex-basis: 50%;
+.main{
   display:flex;
   flex-direction: row;
-  justify-content: space-evenly;
-   flex-shrink:0;
-}
-
-
-/* SEARCHBAR  */
-.searchbar__form{
+  flex-wrap:wrap;
   width:100%;
+}
+.footer{
+  width:100%;
+
+  color:black;
+  -webkit-text-stroke: .05em;
+  display:flex; 
+  justify-content: center;
+  align-items:center;
+  padding:2px;
+}
+
+/* TITLE */
+
+.title{
+  font-family: 'JohnnyTorch';
+  font-size:4.5em;
+  font-weight:bolder;
+  letter-spacing: 4px;
+  color:darkred;
+  -webkit-text-stroke: .05em gold;
+  margin:20px 0px 40px 0px;
+}
+/* SEARCHBAR  */
+.searchbar{
   display:flex;
-  margin-bottom:6vh;
+  flex-direction: column;
+  align-items: center;
+  width:100%;
 }
-.searchbar__label{
-  font-family:"Concert One";
-  font-size:2.4em;
-  text-transform: uppercase;
-  font-weight:lighter;
-  margin-right:3px;
+.searchbar__form{
+  display:flex;
+  justify-content: center;
+  width: 80vw;
+  max-width:85%;
 }
+
 
 .searchbar__input{
   border:3px solid black; 
-  font-family:"Concert One";
+  font-family: "Concert One";
   font-size:1.8em;
   text-transform:uppercase;
   border-radius:.25em;
-  width:50%;
-  flex-grow:2;
-  flex-shrink:0;
-  margin-right:2px;
+  flex-grow:1;
+  padding:3px;
 }
+
+.searchbar__resultList{
+  list-style: none;
+  margin-top:60px;
+  padding:0;
+  position:absolute;
+  width:90%;
+  max-height:15vh;
+  overflow:hidden;
+  padding: 3px 0px 3px 0px;
+}
+.searchbar__resultItem{
+  font-size:1.4rem;
+  background:white;
+  text-transform:capitalize;
+  font-family: "Concert One";
+  text-decoration:none;
+  color:black;
+  letter-spacing: 3px;
+  text-align: center;
+  padding:3px;
+}
+
+.searchbar__resultItem:hover{
+ cursor:pointer;
+ color:gold;
+}
+
 .searchbar__button{
   padding:0px;
   border:none;
   background:none;
+  flex-grow:0;
 }
 .searchbar__icon {
   font-family: 'Material Icons';
@@ -96,65 +156,47 @@ fieldset{
   white-space: nowrap;
   direction: ltr;
   box-sizing: border-box;
-
-
-  /* Support for all WebKit browsers. */
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
   font-feature-settings: 'liga';
+  flex-grow:0;
+}
+
+.bannerad{
+  width:100%;
+  margin:10px 0px 10px 0px;
+  flex:0 1 100%;
+}
+.bannerad__image{
+  height:100%;
+  width:100%;
 }
 
 
-/* NAVBAR INFORMATION  */
-.navbar__link{
-  font-family: "JohnnyTorch";
-  text-decoration:none;
-  font-size: 2.2em;
-  text-transform:uppercase;
-color:black;
--webkit-text-stroke: .05em gold;
-}
-
-
-main{
-
-  box-sizing:border-box;
-  display:flex;
-  flex-direction:column;
-  font-family: 'Concert One';
-  flex-shrink:0;
-}
-header,footer{
-  margin:0;
-}
-
-.main__banner{
-  box-sizing:border-box;
-  display:flex;
-   flex-shrink:0;
-}
 /* NEWS COMPONENT */
 .news{
-  width:40vw;
   box-sizing:content-box;
   display: flex;
   flex-direction:column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
+  margin:0 auto;
   padding:2px;
-   flex-shrink:0;
+  order:0;
+  flex: 1 0 100%;
+  max-width:600px;
+  font-size:10px;
 }
 .news__item{
   width: 85%;
   box-sizing: border-box;
-}
-.news__header{
   display:flex;
   flex-direction:column;
   justify-content: center;
   align-items: center;
   margin:.5em;
+  font-size:1em;
 }
 .news__type{
   font-size:3.0em;
@@ -163,7 +205,7 @@ header,footer{
   border-bottom:3px black solid;
   font-weight:bolder;
   font-family: 'JohnnyTorchNoFill';
-  margin:0 0 5vh 0;
+  margin:0;
 }
 .news__title{
   text-transform:uppercase;
@@ -172,11 +214,14 @@ header,footer{
   text-decoration:none;
   color:black;
   flex-basis: 1;
+  letter-spacing: 2px;
+  text-align:center;
 }
 .news__image{
   display:block;
   margin:5px auto;
-
+  width:425px;
+  height:200px;
 }
 
 .news__title:hover{
@@ -185,137 +230,236 @@ header,footer{
 }
 
 .news__description{
-  font-size:1.0em;
+  font-size:1.2em;
   font-family:'Concert One';
   box-sizing:border-box;
-  width:85%;
+  width:100%;
   margin:5px auto;
 }
 .news__author{
   color:darkred;
   font-weight:bolder;
-  font-size:1.2em;
+  font-size:1.3em;
   text-transform:uppercase;
-  letter-spacing: .05em;
   font-family:"Concert One";
+  text-align: center;
 }
-
-
-
-/* TRENDING */
-
-.trending__header{
-  font-size:2.0em;
-  font-weight:2.0em;
-  text-transform: uppercase;
-  font-weight:bolder;
-  font-family: 'JohnnyTorchNoFill';
-  margin:0;
-  border-bottom:3px black solid;
-}
-
 
 /* HIGHEST */
-.trending,.highestRated{
+.list{
   box-sizing:border-box;
-  width:30%;
   padding:2px;
   display:flex;
   flex-direction:column;
   align-items:center;
- 
+  height:100%;
+  width:905;
 }
-.highestRated__header{
-  font-size:2.0em;
-  font-weight:2.6em;
+
+.list__header{
+  font-size:2.0rem;
+  font-weight:2.6rem;
   text-transform: uppercase;
   font-weight:bolder;
   font-family: 'JohnnyTorchNoFill';
   margin:0;
-  width:90%;
   border-bottom:3px black solid;
+  text-align:center;
 }
-
-.trending__list,.highest__list{
-  box-sizing: border-box;
-  
-}
-.trending__recipe,.highest__recipe{
-  text-align:left;
-}
-.trending__link,.highest__link{
+.list__link{
+  font-size:1.2rem;
   text-decoration:none;
   color:black;
 }
-.trending__link:hover,.highest__link:hover{
-  text-decoration:underline;
-}
-@media (max-width:1050px){
-  .navbar{
-    flex-direction:column;
-  }
 
-  .navbar__linksContainer{
-    width:80vw;
-  }
+.list__list{
+  box-sizing: border-box;
+  justify-content: center;
 }
-@media (max-width:500px){
-  .App{
-    width:100vw;
-    flex-direction:column;
+
+.list__link:hover{
+  text-decoration:underline;
+  color:darkblue;
+  cursor: pointer;
+}
+.switchButton{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.switchButton__button{
+  text-transform:uppercase;
+  cursor: pointer;
+  font-size:1.2rem;
+  font-family:"Concert One";
+  border: black solid 4px;
+  background:white;
+  padding:8px;
+  color:black;
+  border-radius:10px;
+}
+.switchButton__button:hover{
+  transition-duration:0.4s;
+  background:gold;
+ color:black;
+
+}
+
+.placeholder{
+  flex:1 0;
+  border:dashed orange 3px;
+}
+.placeholder__list{
+  font-size:1.6rem;
+}
+.placeholder__link{
+  font-size:1.6rem;
+}
+.random{
+  font-size:15px;
+  display:flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items: flex-start;
+  width:100%;
+  flex-wrap:wrap;
+  
+}
+.random__title{
+  font-family: 'JohnnyTorch';
+  font-size:2.3em;
+  font-weight:bolder;
+  letter-spacing: 4px;
+  color:gold;
+  -webkit-text-stroke: 1.5px black;
+}
+
+
+.random__recipe{
+  text-transform: uppercase;
+  text-align: center;
+  flex:1 0 100%;
+  text-decoration:none;
+  font-family: 'JohnnyTorch';
+  font-size:4.0em;
+  font-weight:bolder;
+  letter-spacing: 2px;
+  color:gold;
+  -webkit-text-stroke: .03em black;
+  margin:20px 0px 20px 0px;
+}
+.random__image{
+  max-height:300px;
+  max-width:550px;
+  flex: 1 0 40%;
+}
+.instructions{
+  font-size:1.4em;
+  flex:1 1 100%;
+  text-align: left;
+}
+.ingredients{
+  font-size:1.4em;
+  flex:1 1 50%;
+  text-align: center;
+  height: 300px;
+  border:3px red dashed;
+}
+.ingredients__list{
+  list-style: none;
+  padding:10px;
+  font-size: .8em;
+  column-count: 2;
+}
+.ingredients__item{
+  margin-top:5px;
+  margin-bottom :5px;
+}
+
+@media(max-width:2000px){
+  .news{
+    font-size:1.4em;
   }
   
-  .navbar__title{
-    font-size:40px;
-    margin:0px 0px 15px 0px;
-    text-align: center;
+  .list{
+    flex:1 0;
   }
-  .navbar__linksContainer{
-    flex-direction:column;
-
-    align-items: center;
+  .bannerad{
+    flex-basis:100%;
+    height:250px;
+    max-height:425px;
+    margin-bottom:40px;
+    text-align:center;
   }
-  .navbar__link{
-    font-size:30px;
-    margin:10px;
-    flex-shrink:0;
-  }
-  .searchbar__form{
-    flex-direction:column;
-  }
-  .searchbar{
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-shrink:0;
-  }
-  .searchbar__label{
-    font-size:28px;
-  }
-  .searchbar__input{
-    font-size:16px;
-    width:250px;
-    flex-grow:0;
-  }
-  .main__banner{
-    flex-direction: column;
-  }
-  .news{
-    width:100%;
-    flex-shrink:0;
-  }
-  .news__description{
-    font-size:14px;
-    
-  }
-
-  .trending,.highestRated{
-    width:100%;
-    box-sizing:content-box;
-    flex-shrink:0;
-  }
-  .trending__header,.highestRated__header{
-    border:none;
+  .bannerad__image{
+    width:70%;
+    border:5px black solid;
   }
 }
+
+
+@media(max-width:850px){
+  .news{
+    font-size:20px;
+  }
+.news__image{
+  width: 400px;
+  height: 200px;
+  }
+  .bannerad{
+    height:30vh;
+  }
+  .ingredients{
+    font-size:1.3em;
+    font-style:none;
+    letter-spacing: 1px;
+  }
+  .instructions{
+    font-size:1.2em;
+    flex-basis:100%;
+
+  }
+  .random__image{
+    width:60vw;
+  }
+}
+
+@media (max-width:599px){
+  .app{
+    padding:0px 5px 0px 5px;
+  }
+
+  .main{
+    display:flex;
+    flex-direction: column;
+
+  }
+  .bannerad{
+    flex-basis:100%;
+    height:20vh;
+  }
+  
+  .title{
+    font-size:3.4rem;
+    margin-bottom:4vh;
+    letter-spacing: 5px;
+  }
+  .news{
+    font-size:18px;
+  }
+  .random{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .instructions{
+    flex:1 0 100%;
+  }
+  .ingredients{
+    flex:1 0 100%;
+  }
+
+}
+
+

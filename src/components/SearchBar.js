@@ -1,19 +1,67 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
+import axios from 'axios';
 
-class SearchBar extends React.Component{
-    render(){
-        return(
-            <form className="searchbar__form">
-            <label className="searchbar__label" htmlFor='search'>Search Flamin' Recipes:</label>
-            <div className="searchbar">
-            <input id='search'className="searchbar__input" placeholder='search...'></input>
-            
-            <button className="searchbar__button" type="submit" htmlFor='search'><i className="searchbar__icon md-dark">search</i>
-            </button>
-            </div>
-        </form>
-        )
+export default function SearchBar() {
+    //STATES 
+    const [formFocus,setFormFocus]=useState(false);
+    const [searchInput,setSearchInput]=useState(null)
+    const [resultData,setResultData]=useState([])
+
+    //HANDLERS
+    function handleInput(e){
+        setSearchInput(e.target.value)
+      
+        if(e.target.value===''){
+            setResultData([])
+        }
     }
-}
 
-export default SearchBar;
+    function handleClick(id){
+        console.log("clicked");
+      axios.post('http://localhost:3000/trending/handleclick',{id}).then(data=>window.open(data.data.sourceUrl,"_blank"))
+    }
+
+    
+    function handleFocus(e){
+        console.log(e.target)
+    }
+    function handleBlur(){
+        console.log("handle Blur hit!")
+        setTimeout(()=>{setResultData([])},200)
+    }
+
+
+    //USE EFFECT 
+    useEffect(()=>{
+        if(searchInput===null) return;
+        axios.post('http://localhost:3000/searchbar',{input:searchInput})
+        .then(data=>setResultData(data.data))
+    },[searchInput])
+
+
+
+    //MAPPING RENDER
+    const renderList=resultData.map(result=>
+            <li className="searchbar__resultItem" key={result.id} onClick={()=>handleClick(result.id)}>
+            {result.title}</li>
+        );
+    //RENDERING
+    return(
+    
+        <form className="searchbar" autoComplete="off" onBlur={()=>handleBlur()} >
+            <div className="searchbar__form">
+                <input id='search'
+                className="searchbar__input" placeholder='search flamin 
+                recipes...'
+                onChange={handleInput}></input>
+
+            </div>
+            <ul className="searchbar__resultList" id="searchbar__results">
+                {renderList}
+            </ul>
+        </form>
+
+       
+  
+    )
+}
