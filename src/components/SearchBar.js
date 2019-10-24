@@ -34,7 +34,7 @@ export default function SearchBar() {
     //USE EFFECT 
     useEffect(()=>{
         if(searchInput===null) return;
-        axios.post('http://localhost:3000/searchbar',{input:searchInput})
+        axios.post('https://desolate-tor-39614.herokuapp.com/searchbar',{input:searchInput})
         .then(data=>setResultData(data.data))
     },[searchInput])
 

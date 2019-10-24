@@ -8,7 +8,7 @@ export default function Trending (){
 
     //EFFECTS 
     useEffect(()=>{
-        fetch('http://localhost:3000/trending')
+        fetch('https://desolate-tor-39614.herokuapp.com/trending')
         .then(res=>res.json())
         .then(data=>{
             console.log(data)
@@ -18,7 +18,7 @@ export default function Trending (){
     //HANDLERS 
       function handleClick(id){
           console.log("handleClick",id)
-        axios.post('http://localhost:3000/trending/handleclick',{id}).then(data=>window.open(data.data.sourceUrl,"_blank"))
+        axios.post('https://desolate-tor-39614.herokuapp.com/trending/handleclick',{id}).then(data=>window.open(data.data.sourceUrl,"_blank"))
       }
 
     //METHODS

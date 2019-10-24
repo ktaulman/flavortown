@@ -7,7 +7,7 @@ export default function Random () {
 
     //EFFECTS 
     useEffect(()=>{
-        fetch('http://localhost:3000/random')
+        fetch('https://desolate-tor-39614.herokuapp.com/random')
         .then(res=>res.json()).then(data=>setDisplayData(data))
         }
         ,[])

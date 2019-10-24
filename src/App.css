@@ -56,7 +56,7 @@ header,footer{
   align-items: center;
   width:100%;
   margin-top:10px;
-  margin-bottom:30px;
+  margin-bottom:10px;
 }
 .main{
   display:flex;
@@ -92,19 +92,21 @@ header,footer{
   flex-direction: column;
   align-items: center;
   width:100%;
+  min-height:70px;
 }
 .searchbar__form{
   display:flex;
   justify-content: center;
-  width: 80vw;
+  width: 85vw;
   max-width:85%;
+  font-size:1em;
 }
 
 
 .searchbar__input{
   border:3px solid black; 
   font-family: "Concert One";
-  font-size:1.8em;
+  font-size:1.3em;
   text-transform:uppercase;
   border-radius:.25em;
   flex-grow:1;
@@ -118,11 +120,12 @@ header,footer{
   position:absolute;
   width:90%;
   max-height:15vh;
-  overflow:hidden;
+  overflow:scroll;
   padding: 3px 0px 3px 0px;
+  font-size:1em;
 }
 .searchbar__resultItem{
-  font-size:1.4rem;
+  font-size:1.4em;
   background:white;
   text-transform:capitalize;
   font-family: "Concert One";
@@ -186,7 +189,7 @@ header,footer{
   order:0;
   flex: 1 0 100%;
   max-width:600px;
-  font-size:10px;
+  font-size:1.4em;
 }
 .news__item{
   width: 85%;
@@ -254,6 +257,7 @@ header,footer{
   align-items:center;
   height:100%;
   width:905;
+  flex:1 0 50%;
 }
 
 .list__header{
@@ -353,33 +357,47 @@ header,footer{
   max-height:300px;
   max-width:550px;
   flex: 1 0 40%;
+  align-self: center;
+  border: 3px gold solid;
 }
 .instructions{
   font-size:1.4em;
-  flex:1 1 100%;
+  flex:1 1 90%;
   text-align: left;
+  padding:10px;
+}
+.instructions__item{
+  font-size:1.3em;
 }
 .ingredients{
   font-size:1.4em;
   flex:1 1 50%;
   text-align: center;
-  height: 300px;
-  border:3px red dashed;
+  min-height: 300px;
 }
 .ingredients__list{
   list-style: none;
   padding:10px;
-  font-size: .8em;
+  font-size: 1em;
   column-count: 2;
 }
 .ingredients__item{
   margin-top:5px;
   margin-bottom :5px;
+  font-size:1em;
+  padding-top:1px;
+  padding-bottom:1px;
 }
 
-@media(max-width:2000px){
+@media(min-width:1100px){
   .news{
     font-size:1.4em;
+  }
+  .searchbar{
+    font-size:40px;
+  }
+  .searchbar__resultList{
+    max-height:35vh;
   }
   
   .list{
@@ -395,6 +413,9 @@ header,footer{
   .bannerad__image{
     width:70%;
     border:5px black solid;
+  }
+  .list__link{
+    font-size:24px;
   }
 }
 
@@ -431,8 +452,7 @@ header,footer{
   }
 
   .main{
-    display:flex;
-    flex-direction: column;
+   justify-content: center;
 
   }
   .bannerad{
@@ -452,14 +472,35 @@ header,footer{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-size:11px;
+  }
+  .random__image{
+    width:80vw;
+  }
+  .random__recipe{
+    font-size:2.9em;
+    stroke: black;
   }
   .instructions{
     flex:1 0 100%;
   }
   .ingredients{
     flex:1 0 100%;
+  
+  }
+  .list{
+    flex-basis: 100%;
   }
 
 }
-
+@media(max-width:324px){
+  .news{
+    font-size:10px;
+    width:80%;
+  }
+  .news__image{
+    width:200px;
+    height:100px;
+  }
+}
 
