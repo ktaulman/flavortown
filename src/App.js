@@ -50,7 +50,7 @@ export default function App (){
         <SearchBar /> 
       </Header>
       
-      {!isGuyClicked?
+      {isGuyClicked?
       <div>
       <BannerAd src="http://realpants.com/wp-content/uploads/2015/03/648x300xpromo-guy-fieri-savory-sausages.jpg.pagespeed.ic_.5TFvSsrJ8x.jpg" />
         <Random />
