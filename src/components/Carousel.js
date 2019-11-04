@@ -8,7 +8,7 @@ export function Carousel(){
 
     //GET API 
     useEffect(()=>{
-        fetch('http://desolate-tor-39614.herokuapp.com/carousel')
+        fetch('https://desolate-tor-39614.herokuapp.com/carousel')
         .then(res=>res.json())
         .then(data=>setDisplayData(data))
     },[])
