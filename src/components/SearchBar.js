@@ -16,7 +16,7 @@ export default function SearchBar() {
     }
 
     function handleClick(id){
-      axios.post('http://localhost:3000/trending/handleclick',{id}).then(data=>window.open(data.data.sourceUrl,"_blank"))
+      axios.post('https://desolate-tor-39614.herokuapp.com/trending/handleclick',{id}).then(data=>window.open(data.data.sourceUrl,"_blank"))
     }
 
     function handleBlur(){
