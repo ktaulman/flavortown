@@ -11,13 +11,11 @@ export default function Trending (){
         fetch('https://desolate-tor-39614.herokuapp.com/trending')
         .then(res=>res.json())
         .then(data=>{
-            console.log(data)
             setDisplayData(data)
         })
       },[])
     //HANDLERS 
       function handleClick(id){
-          console.log("handleClick",id)
         axios.post('https://desolate-tor-39614.herokuapp.com/trending/handleclick',{id}).then(data=>window.open(data.data.sourceUrl,"_blank"))
       }
 

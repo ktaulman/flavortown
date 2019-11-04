@@ -3,7 +3,6 @@ import axios from 'axios';
 
 export default function SearchBar() {
     //STATES 
-    const [formFocus,setFormFocus]=useState(false);
     const [searchInput,setSearchInput]=useState(null)
     const [resultData,setResultData]=useState([])
 

@@ -16,7 +16,7 @@ export default function Highest(){
     //HANDLERS 
     function handleClick(id){
         console.log("handleClick",id)
-      axios.post('http://desolate-tor-39614.herokuapp.com/trending/handleclick',{id}).then(data=>window.open(data.data.sourceUrl,"_blank"))
+      axios.post('https://desolate-tor-39614.herokuapp.com/trending/handleclick',{id}).then(data=>window.open(data.data.sourceUrl,"_blank"))
     }
 
   //METHODS
