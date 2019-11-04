@@ -15,6 +15,7 @@ import Placeholder from './components/Placeholder'
 import BannerAd from './components/BannerAd';
 import PlaceHolderNews from './components/PlaceholderNews';
 import Random from './components/Random'
+import { Carousel } from './components/Carousel';
 
 
 
@@ -63,9 +64,10 @@ export default function App (){
         <BannerAd src="http://realpants.com/wp-content/uploads/2015/03/648x300xpromo-guy-fieri-savory-sausages.jpg.pagespeed.ic_.5TFvSsrJ8x.jpg" />
   
        
-        
+        <Carousel/>
           <Trending /> 
           <Highest /> 
+       
       </Main>
       }
 

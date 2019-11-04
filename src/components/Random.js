@@ -35,7 +35,7 @@ export default function Random () {
 
         const renderIngredients= extendedIngredients.map(ingredient=>
             <li className='ingredients__item'>
-                <h3>{ingredient.originalString}</h3>
+                {ingredient.originalString}
             </li>
         );
         
@@ -45,13 +45,13 @@ export default function Random () {
            <a className="random__recipe" href={sourceUrl} >{title}</a>
             <img src={image} alt='' className="random__image"/>
             <section className="ingredients">
-                <h2 className="random__title">Ingredients</h2>
+                <h2 className="ingredients__title">Ingredients</h2>
                     <ul className="ingredients__list">
                         {renderIngredients}
                     </ul>
             </section>
             <section className="instructions">
-                <h2 className="random__title">Instructions</h2>
+                <h2 className="instructions__title">Instructions</h2>
                 <ul>{renderInstructions}</ul>
             </section>
           
