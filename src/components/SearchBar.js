@@ -17,16 +17,10 @@ export default function SearchBar() {
     }
 
     function handleClick(id){
-        console.log("clicked");
       axios.post('http://localhost:3000/trending/handleclick',{id}).then(data=>window.open(data.data.sourceUrl,"_blank"))
     }
 
-    
-    function handleFocus(e){
-        console.log(e.target)
-    }
     function handleBlur(){
-        console.log("handle Blur hit!")
         setTimeout(()=>{setResultData([])},200)
     }
 

@@ -11,9 +11,7 @@ import News from './components/News';
 import SearchBar from './components/SearchBar';
 import Trending from './components/Trending';
 import Highest from "./components/Highest";
-import Placeholder from './components/Placeholder'
 import BannerAd from './components/BannerAd';
-import PlaceHolderNews from './components/PlaceholderNews';
 import Random from './components/Random'
 import { Carousel } from './components/Carousel';
 
@@ -27,7 +25,6 @@ export default function App (){
   function SwitchButton(){
 
     function handleSwitch(){
-      console.log('handleswitch clicked')
       setIsGuyClicked(!isGuyClicked);
     }
 

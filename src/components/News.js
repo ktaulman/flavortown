@@ -14,7 +14,6 @@ export default function News (){
 
   if(displayData){
     const {title,urlToImage,description,url,author,source}=displayData;
-    console.log(source)
   return(
     <article className="news">
       <h2 className="news__type">Food News</h2>
