@@ -8,7 +8,7 @@ export default function Highest(){
     //EFFECTS 
     useEffect(()=>{
         console.log('useEffect Highest')
-        fetch('http://desolate-tor-39614.herokuapp.com/highest')
+        fetch('https://desolate-tor-39614.herokuapp.com/highest')
         .then(res=>res.json())
         .then(data=>setDisplayData(data))
     },[])
