@@ -7,7 +7,7 @@ export default function Highest(){
 
     //EFFECTS 
     useEffect(()=>{
-        fetch('https://desolate-tor-39614.herokuapp.com/highest')
+        fetch('https://flavortown-api.herokuapp.com/highest')
         .then(res=>res.json())
         .then(data=>setDisplayData(data))
     },[])
@@ -15,7 +15,7 @@ export default function Highest(){
     //HANDLERS 
     function handleClick(id){
         console.log("handleClick",id)
-      axios.post('https://desolate-tor-39614.herokuapp.com/trending/handleclick',{id}).then(data=>window.open(data.data.sourceUrl,"_blank"))
+      axios.post('https://flavortown-api.herokuapp.com/trending/handleclick',{id}).then(data=>window.open(data.data.sourceUrl,"_blank"))
     }
 
   //METHODS

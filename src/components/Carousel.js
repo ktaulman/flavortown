@@ -7,7 +7,7 @@ export function Carousel(){
 
     //GET API 
     useEffect(()=>{
-        fetch('https://desolate-tor-39614.herokuapp.com/carousel')
+        fetch('https://flavortown-api.herokuapp.com/carousel')
         .then(res=>res.json())
         .then(data=>setDisplayData(data))
     },[])

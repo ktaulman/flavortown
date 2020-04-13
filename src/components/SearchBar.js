@@ -16,7 +16,7 @@ export default function SearchBar() {
     }
 
     function handleClick(id){
-      axios.post('https://desolate-tor-39614.herokuapp.com/trending/handleclick',{id}).then(data=>window.open(data.data.sourceUrl,"_blank"))
+      axios.post('https://flavortown-api.herokuapp.com/trending/handleclick',{id}).then(data=>window.open(data.data.sourceUrl,"_blank"))
     }
 
     function handleBlur(){
@@ -27,7 +27,7 @@ export default function SearchBar() {
     //USE EFFECT 
     useEffect(()=>{
         if(searchInput===null) return;
-        axios.post('https://desolate-tor-39614.herokuapp.com/searchbar',{input:searchInput})
+        axios.post('https://flavortown-api.herokuapp.com/searchbar',{input:searchInput})
         .then(data=>setResultData(data.data))
     },[searchInput])
 

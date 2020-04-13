@@ -7,7 +7,7 @@ export default function Random () {
 
     //EFFECTS 
     useEffect(()=>{
-        fetch('https://desolate-tor-39614.herokuapp.com/random')
+        fetch('https://flavortown-api.herokuapp.com/random')
         .then(res=>res.json()).then(data=>setDisplayData(data))
         }
         ,[])

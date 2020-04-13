@@ -4,7 +4,7 @@ export default function News (){
   const [displayData,setDisplayData]=useState(null);
 
   useEffect(()=>{
-    fetch('https://desolate-tor-39614.herokuapp.com/news')
+    fetch('https://flavortown-api.herokuapp.com/news')
     .then(res=>res.json())
     .then(data=>{setDisplayData(data)})
 

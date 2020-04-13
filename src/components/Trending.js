@@ -8,7 +8,7 @@ export default function Trending (){
 
     //EFFECTS 
     useEffect(()=>{
-        fetch('https://desolate-tor-39614.herokuapp.com/trending')
+        fetch('https://flavortown-api.herokuapp.com/trending')
         .then(res=>res.json())
         .then(data=>{
             setDisplayData(data)
@@ -16,7 +16,7 @@ export default function Trending (){
       },[])
     //HANDLERS 
       function handleClick(id){
-        axios.post('https://desolate-tor-39614.herokuapp.com/trending/handleclick',{id}).then(data=>window.open(data.data.sourceUrl,"_blank"))
+        axios.post('https://flavortown-api.herokuapp.com/trending/handleclick',{id}).then(data=>window.open(data.data.sourceUrl,"_blank"))
       }
 
     //METHODS
