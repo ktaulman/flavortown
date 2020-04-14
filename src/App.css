@@ -59,6 +59,7 @@ h2{
   width:100%;
   background:gold;
   position:relative;
+  z-index:1;
 }
 .header__flames{
   position:absolute;
@@ -79,7 +80,7 @@ h2{
   color:rgb(255, 255, 255);
   -webkit-text-stroke: .05em black;
   margin:20px 0px 40px 0px;
-  z-index:2;
+  z-index:3;
 }
 
 .searchbar{
@@ -89,7 +90,7 @@ h2{
   width:100%;
   min-height:120px;
   font-size:4.5em;
-  z-index:2;
+  z-index:3;
   position: relative;
 }
 
@@ -118,6 +119,7 @@ h2{
   border-radius:.25em;
   flex-grow:1;
   padding:3px;
+  z-index:3
 }
 
 .searchbar__resultList{
@@ -128,6 +130,8 @@ h2{
   overflow:scroll;
   padding: 3px 0px 3px 0px;
   font-size:1em;
+  position:absolute;
+  z-index:3;
 }
 .searchbar__resultItem{
   font-size:1.4em;
@@ -177,7 +181,7 @@ h2{
   align-items: center;
   margin:0;
   padding:0;
-  position:relative;
+  z-index:2;
 }
 
 .switchButton__button{
@@ -400,11 +404,10 @@ h2{
   font-weight:bolder;
   font-family: 'JohnnyTorchNoFill';
   margin:0;
-  border-bottom:3px black solid;
   text-align:center;
 }
 .list__link{
-  font-size:2.0em;
+  font-size:2.5em;
   text-decoration:none;
   color:black;
 }
@@ -602,6 +605,12 @@ h2{
   }
   .random__image{
     width:60vw;
+  }
+  .list__header{
+    font-size:36px;
+  }
+  .list__link{
+    font-size:20px;
   }
 }
 
