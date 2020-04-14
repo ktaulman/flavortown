@@ -8,11 +8,12 @@
     position:relative;
     z-index:1;
   }
+
   .header__title{
     font-family: 'JohnnyTorch';
     font-size:8.5rem;
     font-weight:bolder;
-    letter-spacing: 3rem;
+    letter-spacing: 1.2rem;
     color:rgb(255, 255, 255);
     -webkit-text-stroke: .05em black;
     margin:20px 0px 40px 0px;

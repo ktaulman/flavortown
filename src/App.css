@@ -6,6 +6,14 @@
   font-family:'JohnnyTorchNoFill';
   src: url("./fonts/johnnytorch3dital.ttf") format('truetype');
 }
+@font-face{
+  font-family:'Comic Strip';
+  src:url('./fonts/COMIC_STRIP_POGO.ttf');
+}
+@font-face{
+  font-family:'Agreloy';
+  src:url('./fonts/Agreloy.otf');
+}
 
 @keyframes blink {
   50% {
@@ -197,79 +205,7 @@ h2{
   text-align: center;
 }
 
-/* NEWS COMPONENT */
 
-.news{
-  box-sizing:content-box;
-  display: flex;
-  flex-direction:column;
-  justify-content: center;
-  align-items: center;
-  margin:0 auto;
-  padding:2px;
-  order:0;
-  flex: 1 0 100%;
-  max-width:600px;
-  font-size:1.4rem;
-}
-.news__item{
-  width:80vw;
-  box-sizing: border-box;
-  display:flex;
-  flex-direction:column;
-  justify-content: center;
-  align-items: center;
-  margin:.5rem;
-  margin-top:30px;
-  font-size:1rem;
-}
-.news__type{
-  font-size:3.0rem;
-  font-weight:2.6rem;
-  text-transform: uppercase;
-  text-align:center;
-  font-weight:bolder;
-  font-family: 'JohnnyTorchNoFill';
-  margin:0;
-}
-.news__title{
-  text-transform:uppercase;
-  font-weight:bolder;
-  font-size:1.6rem;
-  text-decoration:none;
-  color:black;
-  flex-basis: 1;
-  letter-spacing: 2px;
-  text-align:center;
-}
-.news__image{
-  display:block;
-  margin:5px auto;
-  width:425px;
-  height:200px;
-}
-
-.news__title:hover{
-  color:darkblue;
-  text-decoration: underline;
-}
-
-.news__description{
-  font-size:1.2rem;
-  font-family:'Concert One';
-  box-sizing:border-box;
-  width:80%;
-  margin:5px auto;
- text-align:center;
-}
-.news__author{
-  color:darkred;
-  font-weight:bolder;
-  font-size:1.3rem;
-  text-transform:uppercase;
-  font-family:"Concert One";
-  text-align: center;
-}
 
 /* HIGHEST */
 .list{
@@ -470,7 +406,7 @@ h2{
   }
 
   .news{
-    font-size:20px;
+    font-size:1.5rem;
   }
 .news__image{
   width: 400px;
@@ -511,9 +447,7 @@ h2{
     margin:0;
     
   }
-  .app{
-    padding:0px 5px 0px 5px;
-  }
+  
   .guyNews__article{
     width:100%;
   }

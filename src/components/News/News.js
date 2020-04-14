@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from 'react';
+import './News.css';
 
 export default function News (){
   const [displayData,setDisplayData]=useState(null);
@@ -22,7 +23,7 @@ export default function News (){
         <a className="news__title" href={url}>      {title}</a>
               <img 
                     className="news__image"
-                    src={urlToImage} alt='' height={100} width={175}
+                    src={urlToImage} alt='' 
                 />
           <summary className="news__description">{description}</summary>
       
@@ -43,7 +44,7 @@ export default function News (){
         <a className="news__title" href='/' alt='link'>      </a>
               <img 
                     className="news__image"
-                    src='' alt='' height={100} width={175}
+                    src='' alt='' 
                 />
           <summary className="news__description">Loading...</summary>
         </header>
