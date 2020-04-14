@@ -6,47 +6,13 @@
   font-family:'JohnnyTorchNoFill';
   src: url("./fonts/johnnytorch3dital.ttf") format('truetype');
 }
-@font-face{
-  font-family:'Ginchiest';
-  src:url('./fonts/Ginchiest.ttf');
-}
-@font-face{
-  font-family:'Ginchiest Shadow';
-  src:url(./fonts/GinchiestShadow.ttf)
-}
-@font-face{
-  font-family:'Western Racing';
-  src:url(./fonts/WesternRacing.ttf)
-}
-@font-face{
-  font-family:'Handwriting';
-  src:url(./fonts/handwriting.ttf)
-}
-@font-face{
-  font-family:'Comic Strip';
-  src:url('./fonts/COMIC_STRIP_POGO.ttf');
-}
-@font-face{
-  font-family:'Agreloy';
-  src:url('./fonts/Agreloy.otf');
-}
 
 @font-face{
-  font-family:'ANDRY';
-  src:url('./fonts/ANDRY.ttf')
+  font-family:'Blocker';
+  src:url(./fonts/Blocker.otf)
 }
-@font-face{
-  font-family:'Bad Handwriting';
-  src:url('./fonts/BadHandwriting.ttf')
-}
-@font-face{
-  font-family:'BBB';
-  src:url('./fonts/BBB.ttf')
-}
-@font-face{
-  font-family:'Sloppy Hand';
-  src:url(./fonts/Sloppy-Hand.otf)
-}
+
+
 @keyframes blink {
   50% {
     opacity: 0.0;
@@ -86,7 +52,7 @@ h2{
   box-sizing:border-box;
   display:flex;
   flex-direction:column;
-  font-family: 'Bad Handwriting';
+  font-family: 'Blocker';
   width:100%;
   overflow:hidden;
 }

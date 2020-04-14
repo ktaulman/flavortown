@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react';
-import './News.css';
+import './FeaturedNews.css';
 
-export default function News (){
+export default function FeaturedNews (){
   const [displayData,setDisplayData]=useState(null);
 
   useEffect(()=>{
@@ -18,7 +18,7 @@ export default function News (){
     const {title,urlToImage,description,url,author,source}=displayData;
   return(
     <article className="news">
-      <h2 className="news__type">Featured Food Article</h2>
+      <h2 className="news__headline">Featured </h2>
       <div className="news__item">
         <a className="news__title" href={url}>      {title}</a>
             

@@ -7,7 +7,7 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
 //Components
-import News from './components/News/News';
+import FeaturedNews from './components/FeaturedNews/FeaturedNews';
 import SearchBar from './components/SearchBar/SearchBar';
 import Trending from './components/Trending/Trending';
 import Highest from "./components/Highest/Highest";
@@ -63,7 +63,7 @@ export default function App (){
         <div style={{margin:'30px 0px'}}>&nbsp;</div>
         <GuyNews/>
         <div style={{margin:'30px 0px'}}>&nbsp;</div>
-          <News />
+          <FeaturedNews />
         
        
         <BannerAd src="https://realpants.com/wp-content/uploads/2015/03/648x300xpromo-guy-fieri-savory-sausages.jpg.pagespeed.ic_.5TFvSsrJ8x.jpg" />
