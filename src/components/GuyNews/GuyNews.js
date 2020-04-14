@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react';
-import Guy from './guy.png'
+import Guy from '../guy.png'
 export default function GuyNews(){
     //STATE 
     const [displayData,setDisplayData]=useState([]);

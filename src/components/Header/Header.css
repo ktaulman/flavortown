@@ -1,0 +1,32 @@
+.header{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width:100%;
+    background:gold;
+    position:relative;
+    z-index:1;
+  }
+  .header__title{
+    font-family: 'JohnnyTorch';
+    font-size:8.5rem;
+    font-weight:bolder;
+    letter-spacing: 3rem;
+    color:rgb(255, 255, 255);
+    -webkit-text-stroke: .05em black;
+    margin:20px 0px 40px 0px;
+    z-index:3;
+  }
+  .header__flames{
+    position:absolute;
+    background-image:url("https://images.vexels.com/media/users/3/146887/isolated/preview/41faeb4b7129b75f4883d75c72627835-fire-flame-clipart-by-vexels.png");
+    background-position:0% 0%;
+    background-size:300px;
+    background-repeat: repeat-x;
+    z-index:1;
+    height:100%;
+    width:100%;
+    opacity:.7;
+  }
+ 

@@ -1,0 +1,87 @@
+
+/* SEARCHBAR  */
+.searchbar{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  width:100%;
+  min-height:120px;
+  font-size:4.5rem;
+  z-index:3;
+  position: relative;
+  font-family: "Concert One";
+}
+.searchbar__form{
+    display:flex;
+    justify-content: center;
+    width: 100%;
+    font-size:1rem;
+    position:absolute;
+    z-index:4;
+  }
+  
+  
+  .searchbar__input{
+    border:3px solid black; 
+    font-family: "Concert One";
+    font-size:5.0rem;
+    text-transform:uppercase;
+    border-radius:.25rem;
+    flex-grow:1;
+    padding:3px;
+    z-index:3;
+    font-style:italic;
+  }
+  
+  .searchbar__resultList{
+    list-style: none;
+    padding:0;
+    width:100%;
+    max-height:50vh;
+    overflow:scroll;
+    padding: 10px 0px;
+    font-size:4.5rem;
+    position:absolute;
+    z-index:3;
+    background:white;
+    outline:none;
+  }
+  .searchbar__resultItem{
+    font-size:3rem;
+    background:white;
+    text-transform:capitalize;
+    text-decoration:none;
+    color:black;
+    letter-spacing: 3px;
+    padding:3px;
+  }
+  
+  .searchbar__resultItem:hover{
+   cursor:pointer;
+   background:darkgrey;
+  }
+  
+  .searchbar__button{
+    padding:0px;
+    border:none;
+    background:none;
+    flex-grow:0;
+  }
+  .searchbar__icon {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2.4rem;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga';
+    flex-grow:0;
+  }

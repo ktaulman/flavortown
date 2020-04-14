@@ -2,18 +2,18 @@ import React,{useState} from 'react';
 import './App.css';
 
 //Containers
-import Main from "./containers/Main";
-import Header from './containers/Header';
-import Footer from './containers/Footer';
+import Main from "./components/Main/Main";
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 //Components
-import News from './components/News';
-import SearchBar from './components/SearchBar';
-import Trending from './components/Trending';
-import Highest from "./components/Highest";
-import BannerAd from './components/BannerAd';
-import Random from './components/Random'
-import  GuyNews from './components/GuyNews';
+import News from './components/News/News';
+import SearchBar from './components/SearchBar/SearchBar';
+import Trending from './components/Trending/Trending';
+import Highest from "./components/Highest/Highest";
+import BannerAd from './components/BannerAd/BannerAd';
+import Random from './components/Random/Random'
+import  GuyNews from './components/GuyNews/GuyNews';
 import Guy from './components/guy.png'
 
 
