@@ -35,8 +35,9 @@ export default function SearchBar() {
 
     //MAPPING RENDER
     const renderList=resultData.map(result=>
+        {return(
             <li className="searchbar__resultItem" key={result.id} onClick={()=>handleClick(result.id)}>
-            {result.title}</li>
+            {result.title}</li>)}
         );
     //RENDERING
     return(

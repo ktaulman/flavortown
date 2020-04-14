@@ -30,7 +30,7 @@ export default function Highest(){
     return(
         <aside className="list">
           <h2 className="list__header">
-             Highest-Rated
+             Highest-Rated Recipes
           </h2>
           <ol className="list__list">
                 {renderHighest}

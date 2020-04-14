@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react';
-
+import Guy from './guy.png'
 export default function Random () {
     //STATE
     const [displayData,setDisplayData]=useState(null);
@@ -16,11 +16,7 @@ export default function Random () {
 
     
     //WHEN NOT LOADED 
-    if(!displayData){
-        return(
-        <div>Loading..</div>
-        )
-    }
+   
 
     //LOADED 
     if(displayData){
@@ -43,7 +39,7 @@ export default function Random () {
     return(
         <div className="random" >
            <a className="random__recipe" href={sourceUrl} >{title}</a>
-            <img src={image} alt='' className="random__image"/>
+            <img src={image?image:Guy} alt='' className="random__image"/>
             <section className="ingredients">
                 <h2 className="ingredients__title">Ingredients</h2>
                     <ul className="ingredients__list">
@@ -59,4 +55,7 @@ export default function Random () {
         )
     
     }
+    return(
+        <h1 style={{fontSize:'36px'}}>Loading...</h1>
+    )
 }

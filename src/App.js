@@ -13,7 +13,8 @@ import Trending from './components/Trending';
 import Highest from "./components/Highest";
 import BannerAd from './components/BannerAd';
 import Random from './components/Random'
-import { Carousel } from './components/Carousel';
+import  GuyNews from './components/GuyNews';
+import Guy from './components/guy.png'
 
 
 
@@ -30,7 +31,6 @@ export default function App (){
 
     return(
       <div className='switchButton'>
-          <img src="https://myrealdomain.com/images/guy-fieri-png-1.png" width="100px" height="100px" alt='' className="switchButton__image" />
         <button className='switchButton__button' onClick={()=>handleSwitch()}>
         Guy! I need a Recipe 
         
@@ -44,24 +44,32 @@ export default function App (){
     <div className="app" id='app'>
 
       <Header>
-        <h1 className="title">FlavorTown</h1>
+        <div className="header__flames"></div>
+        <h1 className="header__title">FlavorTown</h1>
         <SearchBar /> 
+        <SwitchButton />
       </Header>
       
       {isGuyClicked?
       <div>
+      <Random />
       <BannerAd src="https://realpants.com/wp-content/uploads/2015/03/648x300xpromo-guy-fieri-savory-sausages.jpg.pagespeed.ic_.5TFvSsrJ8x.jpg" />
-        <Random />
+        
       </div> 
       
       :
-      <Main>
-        <News />
-  
+        
+        <Main>
+        <div style={{margin:'30px 0px'}}>&nbsp;</div>
+        <GuyNews/>
+        <div style={{margin:'30px 0px'}}>&nbsp;</div>
+          <News />
+        
+       
         <BannerAd src="https://realpants.com/wp-content/uploads/2015/03/648x300xpromo-guy-fieri-savory-sausages.jpg.pagespeed.ic_.5TFvSsrJ8x.jpg" />
   
        
-        <Carousel/>
+      
           <Trending /> 
           <Highest /> 
        
@@ -70,7 +78,7 @@ export default function App (){
 
 
     <Footer>
-        <SwitchButton />
+       <h1 className='footer__title'>FLAVORTOWN </h1>
     </Footer>
     </div>
   )

@@ -13,10 +13,11 @@ export default function News (){
 
 
   if(displayData){
+    console.log(displayData)
     const {title,urlToImage,description,url,author,source}=displayData;
   return(
     <article className="news">
-      <h2 className="news__type">Food News</h2>
+      <h2 className="news__type">Featured Food Article</h2>
       <div className="news__item">
         <a className="news__title" href={url}>      {title}</a>
               <img 
@@ -25,8 +26,9 @@ export default function News (){
                 />
           <summary className="news__description">{description}</summary>
       
-                  <p className="news__author">{`By:${author}, ${source.name}`} 
-                </p>
+                  <p className="news__author">
+                  By:{author?author:null},{source.name}
+                  </p>
       
         </div>
       </article>
@@ -35,7 +37,7 @@ export default function News (){
   if(!displayData){
     return(
       <article className="news">
-      <h2 className="news__type">Food News</h2>
+      <h2 className="news__type">Featured Food Article</h2>
       <div className="news__item">
         <header className="news__header">
         <a className="news__title" href='/' alt='link'>      </a>

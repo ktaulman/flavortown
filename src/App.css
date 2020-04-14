@@ -30,7 +30,6 @@ fieldset{
   border:none;
 }
 body{
-  padding:3%;
   width:100%;
 }
 header,footer{
@@ -58,52 +57,56 @@ h2{
   justify-content: flex-start;
   align-items: center;
   width:100%;
-  margin-top:10px;
-  margin-bottom:10px;
+  background:gold;
+  position:relative;
 }
-.main{
-  display:flex;
-  flex-direction: row;
-  flex-wrap:wrap;
+.header__flames{
+  position:absolute;
+  background-image:url("https://images.vexels.com/media/users/3/146887/isolated/preview/41faeb4b7129b75f4883d75c72627835-fire-flame-clipart-by-vexels.png");
+  background-position:0% 0%;
+  background-size:300px;
+  background-repeat: repeat-x;
+  z-index:1;
+  height:100%;
   width:100%;
-  justify-content: center;
+  opacity:.7;
 }
-.footer{
-  width:100%;
-
-  color:black;
-  -webkit-text-stroke: .05em;
-  display:flex; 
-  justify-content: center;
-  align-items:center;
-  padding:2px;
-}
-
-/* TITLE */
-
-.title{
+.header__title{
   font-family: 'JohnnyTorch';
-  font-size:4.5em;
+  font-size:8.5em;
   font-weight:bolder;
-  letter-spacing: 4px;
-  color:darkred;
-  -webkit-text-stroke: .05em gold;
+  letter-spacing: 50px;
+  color:rgb(255, 255, 255);
+  -webkit-text-stroke: .05em black;
   margin:20px 0px 40px 0px;
+  z-index:2;
 }
-/* SEARCHBAR  */
+
 .searchbar{
   display:flex;
   flex-direction: column;
   align-items: center;
   width:100%;
-  min-height:70px;
+  min-height:120px;
+  font-size:4.5em;
+  z-index:2;
+  position: relative;
 }
+
+
+
+/* TITLE */
+
+
+/* SEARCHBAR  */
+
 .searchbar__form{
   display:flex;
   justify-content: center;
-  width: 85vw;
-  max-width:85%;
+  width: 100%;
   font-size:1em;
+  position:absolute;
+  z-index:4;
 }
 
 
@@ -119,11 +122,9 @@ h2{
 
 .searchbar__resultList{
   list-style: none;
-  margin-top:60px;
   padding:0;
-  position:absolute;
-  width:90%;
-  max-height:15vh;
+  width:100%;
+  max-height:50vh;
   overflow:scroll;
   padding: 3px 0px 3px 0px;
   font-size:1em;
@@ -170,6 +171,37 @@ h2{
   flex-grow:0;
 }
 
+.switchButton{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin:0;
+  padding:0;
+  position:relative;
+}
+
+.switchButton__button{
+  text-transform:uppercase;
+  cursor: pointer;
+  font-size:3.2em;
+  font-family:"Concert One";
+  border: black solid 4px;
+  background:white;
+  padding:8px;
+  color:black;
+  border-radius:10px;
+  z-index:3;
+  margin-bottom:10px;
+}
+.switchButton__button:hover{
+  transition-duration:0.4s;
+  background:gold;
+ color:black;
+
+}
+
+/*  */
+/*  */
 .bannerad{
   width:100%;
   margin:10px 0px 10px 0px;
@@ -180,8 +212,103 @@ h2{
   width:100%;
 }
 
+/* GUYNEWS COMPONENT */
+/* Guy News */
+.guyNews{
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: stretch;
+  font-size: 9px;
+  overflow: hidden;
+  width:100vw;
+}
+.guyNews:hover{
+  overflow:scroll;
+}
+.guyNews__body{
+  width:100%;
+  display:flex;
+
+}
+.guyNews__button{
+  background: white;
+  padding: 0px; 
+  margin:0;
+  color:black;
+  font-size: 4.5em;
+  width:60px;
+  cursor: pointer;
+  border:2px solid red;
+  height:100%;
+}
+.guyNews__article{
+  box-sizing:content-box;
+  display: flex;
+  overflow: scroll;
+  align-items: stretch;
+  padding:2px;
+  font-size:1.4em;
+  flex-grow:1;
+}
+.guyNews__card{
+  min-width:30%;
+  box-sizing: border-box;
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  margin:0px 30px;
+  padding:0;
+  font-size:1em;
+}
+.guyNews__card:hover{
+  cursor: pointer;
+}
+.guyNews__title{
+  font-size:6.2em;
+  font-weight:2.6em;
+  text-transform: uppercase;
+  fill:lightcoral;
+  font-weight:bolder;
+  font-family: 'JohnnyTorchNoFill';
+  margin:0px 0px 30px 0px;
+  flex-basis:100%;
+  text-align:center;
+}
+.guyNews__cardTitle{
+  text-transform:uppercase;
+  font-weight:bolder;
+  font-size:1.6em;
+  text-decoration:none;
+  color:black;
+  flex-basis: 1;
+  letter-spacing: 2px;
+  text-align:center;
+}
+.guyNews__cardImage{
+  display:block;
+  margin:5px auto;
+  width:100%;
+  height:200px;
+}
+
+.guyNews__cardTitle:hover{
+  color:darkblue;
+  text-decoration: underline;
+}
+
+.guyNews__cardAuthor{
+  color:darkred;
+  font-weight:bolder;
+  font-size:1.3em;
+  text-transform:uppercase;
+  font-family:"Concert One";
+  text-align: center;
+}
 
 /* NEWS COMPONENT */
+
 .news{
   box-sizing:content-box;
   display: flex;
@@ -196,20 +323,21 @@ h2{
   font-size:1.4em;
 }
 .news__item{
-  width: 85%;
+  width:80vw;
   box-sizing: border-box;
   display:flex;
   flex-direction:column;
   justify-content: center;
   align-items: center;
   margin:.5em;
+  margin-top:30px;
   font-size:1em;
 }
 .news__type{
   font-size:3.0em;
   font-weight:2.6em;
   text-transform: uppercase;
-  border-bottom:3px black solid;
+  text-align:center;
   font-weight:bolder;
   font-family: 'JohnnyTorchNoFill';
   margin:0;
@@ -240,8 +368,9 @@ h2{
   font-size:1.2em;
   font-family:'Concert One';
   box-sizing:border-box;
-  width:100%;
+  width:80%;
   margin:5px auto;
+ text-align:center;
 }
 .news__author{
   color:darkred;
@@ -265,8 +394,8 @@ h2{
 }
 
 .list__header{
-  font-size:2.0rem;
-  font-weight:2.6rem;
+  font-size:3.5em;
+  font-weight:2.6em;
   text-transform: uppercase;
   font-weight:bolder;
   font-family: 'JohnnyTorchNoFill';
@@ -275,7 +404,7 @@ h2{
   text-align:center;
 }
 .list__link{
-  font-size:1.2rem;
+  font-size:2.0em;
   text-decoration:none;
   color:black;
 }
@@ -290,39 +419,17 @@ h2{
   color:darkblue;
   cursor: pointer;
 }
-.switchButton{
-  display:flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.switchButton__button{
-  text-transform:uppercase;
-  cursor: pointer;
-  font-size:1.2rem;
-  font-family:"Concert One";
-  border: black solid 4px;
-  background:white;
-  padding:8px;
-  color:black;
-  border-radius:10px;
-}
-.switchButton__button:hover{
-  transition-duration:0.4s;
-  background:gold;
- color:black;
-
-}
 
 .placeholder{
   flex:1 0;
   border:dashed orange 3px;
 }
 .placeholder__list{
-  font-size:1.6rem;
+  font-size:1.6em;
 }
 .placeholder__link{
-  font-size:1.6rem;
+  font-size:1.6em;
 }
 .random{
   font-size:15px;
@@ -396,103 +503,39 @@ h2{
   width:80%;
 }
 
-/* Guy News */
-.guyNews{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 9px;
-  overflow: hidden;
-  width:100vw;
-}
-.guyNews__button{
-  background: white;
-  padding: 0px; 
-  margin:0;
-  color:black;
-  font-size: 4.5em;
-  width:60px;
-  cursor: pointer;
-  border:none;
-}
-.guyNews__article{
-  box-sizing:content-box;
-  display: flex;
-  flex-direction:column;
-  justify-content: center;
-  align-items: center;
-  padding:2px;
-  order:0;
-  flex: 1 1 100%;
-  max-width:600px;
-  font-size:1.4em;
-}
-.guyNews__item{
-  width: 85%;
-  box-sizing: border-box;
+
+.main{
   display:flex;
-  flex-direction:column;
-  justify-content: center;
-  align-items: center;
-  margin:.5em;
-  font-size:1em;
-}
-.guyNews__type{
-  font-size:3.0em;
-  font-weight:2.6em;
-  text-transform: uppercase;
-  border-bottom:3px black solid;
-  font-weight:bolder;
-  font-family: 'JohnnyTorchNoFill';
-  margin:0;
-}
-.guyNews__title{
-  text-transform:uppercase;
-  font-weight:bolder;
-  font-size:1.6em;
-  text-decoration:none;
-  color:black;
-  flex-basis: 1;
-  letter-spacing: 2px;
-  text-align:center;
-}
-.guyNews__image{
-  display:block;
-  margin:5px auto;
-  max-width:450px;
-  height:200px;
-}
-
-.guyNews__title:hover{
-  color:darkblue;
-  text-decoration: underline;
-}
-
-.guyNews__description{
-  font-size:1.2em;
-  font-family:'Concert One';
-  box-sizing:border-box;
+  flex-direction: row;
+  flex-wrap:wrap;
   width:100%;
-  margin:5px auto;
+  justify-content: center;
 }
-.guyNews__author{
-  color:darkred;
-  font-weight:bolder;
-  font-size:1.3em;
-  text-transform:uppercase;
-  font-family:"Concert One";
-  text-align: center;
+.footer{
+  width:100%;
+  background:gold;
+  color:black;
+  -webkit-text-stroke: .05em;
+  display:flex; 
+  justify-content: center;
+  align-items:center;
+  padding:2px;
 }
-
-
-
+.footer__title{
+  font-size:4.5em;
+  letter-spacing:1em;
+  color:white;
+  -webkit-text-stroke: .05em black;
+  font-family:'johnnytorch'
+}
 
 @media(min-width:1100px){
+  html{
+    font-size:10px;
+ 
+  }
   .news{
     font-size:1.4em;
-  }
-  .searchbar{
-    font-size:40px;
   }
   .searchbar__resultList{
     max-height:35vh;
@@ -518,7 +561,25 @@ h2{
 }
 
 
-@media(max-width:850px){
+@media(max-width:1099px){
+  html{
+    font-size:8px;
+  }
+  .header__title{
+    letter-spacing: 25px;
+  }
+  .guyNews__article{
+    flex-direction:column;
+    align-items: center;
+    max-height:300px;
+    width:100%;
+  }
+  .guyNews__card{
+    min-width:40%;
+    max-width:75%;
+    flex:2 1 100%;
+  }
+
   .news{
     font-size:20px;
   }
@@ -545,10 +606,22 @@ h2{
 }
 
 @media (max-width:599px){
+  html{
+    font-size:6px;
+  }
+  .header__title{
+    letter-spacing: 15px;
+  }
+  .searchbar__resultList{
+    margin:0;
+    
+  }
   .app{
     padding:0px 5px 0px 5px;
   }
-
+  .guyNews__article{
+    width:100%;
+  }
   .main{
    justify-content: center;
 
@@ -557,15 +630,8 @@ h2{
     flex-basis:100%;
     height:20vh;
   }
-  
-  .title{
-    font-size:3.4rem;
-    margin-bottom:4vh;
-    letter-spacing: 5px;
-  }
-  .news{
-    font-size:18px;
-  }
+
+
   .random{
     flex-direction: column;
     justify-content: center;
@@ -576,12 +642,11 @@ h2{
     width:80vw;
   }
   .random__recipe{
-    font-size:2.9em;
     stroke: black;
   }
   .instructions{
     flex:1 0 100%;
-  }npm
+  }
   .ingredients{
     flex:1 0 100%;
   
@@ -593,12 +658,14 @@ h2{
 }
 @media(max-width:324px){
   .news{
-    font-size:10px;
     width:80%;
   }
   .news__image{
     width:200px;
     height:100px;
+  }
+  .guyNews__article{
+    width:100%;
   }
 }
 

@@ -30,7 +30,7 @@ export default function Trending (){
       
      return( 
         <aside className='list'>
-        <h2 className="list__header">Trending</h2>
+        <h2 className="list__header">Trending Recipes</h2>
         <ul className="list__list">
             {renderList}
         </ul>
