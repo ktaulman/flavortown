@@ -7,6 +7,22 @@
   src: url("./fonts/johnnytorch3dital.ttf") format('truetype');
 }
 @font-face{
+  font-family:'Ginchiest';
+  src:url('./fonts/Ginchiest.ttf');
+}
+@font-face{
+  font-family:'Ginchiest Shadow';
+  src:url(./fonts/GinchiestShadow.ttf)
+}
+@font-face{
+  font-family:'Western Racing';
+  src:url(./fonts/WesternRacing.ttf)
+}
+@font-face{
+  font-family:'Handwriting';
+  src:url(./fonts/handwriting.ttf)
+}
+@font-face{
   font-family:'Comic Strip';
   src:url('./fonts/COMIC_STRIP_POGO.ttf');
 }
@@ -15,6 +31,22 @@
   src:url('./fonts/Agreloy.otf');
 }
 
+@font-face{
+  font-family:'ANDRY';
+  src:url('./fonts/ANDRY.ttf')
+}
+@font-face{
+  font-family:'Bad Handwriting';
+  src:url('./fonts/BadHandwriting.ttf')
+}
+@font-face{
+  font-family:'BBB';
+  src:url('./fonts/BBB.ttf')
+}
+@font-face{
+  font-family:'Sloppy Hand';
+  src:url(./fonts/Sloppy-Hand.otf)
+}
 @keyframes blink {
   50% {
     opacity: 0.0;
@@ -54,7 +86,7 @@ h2{
   box-sizing:border-box;
   display:flex;
   flex-direction:column;
-  font-family: 'Concert One';
+  font-family: 'Bad Handwriting';
   width:100%;
   overflow:hidden;
 }
@@ -82,7 +114,7 @@ h2{
   text-transform:uppercase;
   cursor: pointer;
   font-size:3.2rem;
-  font-family:"Concert One";
+  font-family:inherit;
   border: black solid 4px;
   background:white;
   padding:8px;
@@ -105,6 +137,9 @@ h2{
   margin:10px 0px 10px 0px;
   flex:0 1 100%;
 }
+.bannerad:hover{
+  cursor:pointer;
+}
 .bannerad__image{
   height:100%;
   width:100%;
@@ -117,7 +152,6 @@ h2{
   flex-direction:column;
   justify-content: center;
   align-items: stretch;
-  font-size: 9px;
   overflow: hidden;
   width:100vw;
 }
@@ -146,7 +180,7 @@ h2{
   overflow: scroll;
   align-items: stretch;
   padding:2px;
-  font-size:1.4rem;
+  font-size:4rem;
   flex-grow:1;
 }
 .guyNews__card{
@@ -156,9 +190,9 @@ h2{
   flex-direction:column;
   justify-content: center;
   align-items: center;
-  margin:0px 30px;
+  margin:3px 30px;
   padding:0;
-  font-size:1rem;
+  border-bottom:lightgrey solid 3px;
 }
 .guyNews__card:hover{
   cursor: pointer;
@@ -177,7 +211,6 @@ h2{
 .guyNews__cardTitle{
   text-transform:uppercase;
   font-weight:bolder;
-  font-size:1.6rem;
   text-decoration:none;
   color:black;
   flex-basis: 1;
@@ -199,10 +232,12 @@ h2{
 .guyNews__cardAuthor{
   color:darkred;
   font-weight:bolder;
-  font-size:1.3rem;
   text-transform:uppercase;
-  font-family:"Concert One";
+  font-family:inherit;
   text-align: center;
+  font-style:italic;
+  font-size:3.5rem;
+  margin:3px 0px;
 }
 
 

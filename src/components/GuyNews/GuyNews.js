@@ -26,14 +26,15 @@ export default function GuyNews(){
             return(
                 <div className="guyNews__card">
                 <a className="guyNews__cardTitle" href={url}>{title}</a>
-                        <img 
-                            className="guyNews__cardImage"
-                            src={urlToImage} alt='' height={100} width={175}
-                        />
+                       
                         <summary className="guyNews__cardDescription">{description}</summary>
                 
                             <p className="guyNews__cardAuthor">{`${author}, ${source.name}`} 
                         </p>
+                        {/* <img 
+                            className="guyNews__cardImage"
+                            src={urlToImage} alt='' height={100} width={175}
+                        /> */}
             </div>
             )
         }

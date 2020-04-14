@@ -6,30 +6,38 @@ export default function SearchBar() {
     //STATES 
     const [searchInput,setSearchInput]=useState(null)
     const [resultData,setResultData]=useState([])
-
+    console.log('searchInput=',searchInput)
     //HANDLERS
     function handleInput(e){
+        console.log(e.target.value)
         setSearchInput(e.target.value)
-      
-        if(e.target.value===''){
+        if(e.target.value===''||null){
             setResultData([])
         }
     }
 
     function handleClick(id){
-      axios.post('https://flavortown-api.herokuapp.com/trending/handleclick',{id}).then(data=>window.open(data.data.sourceUrl,"_blank"))
+      axios.post('https://flavortown-api.herokuapp.com/trending/handleclick',{id}).then(data=>window.open(data.data.sourceUrl,"_blank")).catch(console.error)
     }
 
     function handleBlur(){
         setTimeout(()=>{setResultData([])},200)
     }
-
+    function handleBackAgainClick(){
+        const search=document.querySelector('#search');
+        console.log(search.value)
+    }
 
     //USE EFFECT 
     useEffect(()=>{
-        if(searchInput===null) return;
+
+        if(searchInput===null||'') return;
         axios.post('https://flavortown-api.herokuapp.com/searchbar',{input:searchInput})
-        .then(data=>setResultData(data.data))
+        .then(data=>{
+            console.log(data)
+
+            setResultData(data.data)})
+        .catch(console.error)
     },[searchInput])
 
 
@@ -43,7 +51,10 @@ export default function SearchBar() {
     //RENDERING
     return(
     
-        <form className="searchbar" autoComplete="off" onBlur={()=>handleBlur()} >
+        <form className="searchbar" autoComplete="off" 
+            onBlur={()=>handleBlur()} 
+            onClick={()=>handleBackAgainClick()}
+            >
             <div className="searchbar__form">
                 <input id='search'
                 className="searchbar__input" placeholder='search flamin 

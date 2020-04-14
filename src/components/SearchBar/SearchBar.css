@@ -9,7 +9,7 @@
   font-size:4.5rem;
   z-index:3;
   position: relative;
-  font-family: "Concert One";
+  font-family: inherit;
 }
 .searchbar__form{
     display:flex;
@@ -23,7 +23,7 @@
   
   .searchbar__input{
     border:3px solid black; 
-    font-family: "Concert One";
+    font-family: inherit;
     font-size:5.0rem;
     text-transform:uppercase;
     border-radius:.25rem;

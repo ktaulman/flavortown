@@ -21,16 +21,16 @@ export default function News (){
       <h2 className="news__type">Featured Food Article</h2>
       <div className="news__item">
         <a className="news__title" href={url}>      {title}</a>
-              <img 
-                    className="news__image"
-                    src={urlToImage} alt='' 
-                />
+            
           <summary className="news__description">{description}</summary>
       
                   <p className="news__author">
                   By:{author?author:null},{source.name}
                   </p>
-      
+                  <img 
+                    className="news__image"
+                    src={urlToImage} alt='' 
+                />
         </div>
       </article>
   )}
