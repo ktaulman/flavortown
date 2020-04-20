@@ -17,7 +17,7 @@ export default function SearchBar() {
     }
 
     function handleClick(id){
-      axios.post('https://flavortown-api.herokuapp.com/trending/handleclick',{id}).then(data=>window.open(data.data.sourceUrl,"_blank")).catch(console.error)
+      axios.post(process.env.REACT_APP_API_ADDRESS+'/trending/handleclick',{id}).then(data=>window.open(data.data.sourceUrl,"_blank")).catch(console.error)
     }
 
     function handleBlur(){
@@ -32,7 +32,7 @@ export default function SearchBar() {
     useEffect(()=>{
 
         if(searchInput===null||'') return;
-        axios.post('https://flavortown-api.herokuapp.com/searchbar',{input:searchInput})
+        axios.post(process.env.REACT_APP_API_ADDRESS+'/searchbar',{input:searchInput})
         .then(data=>{
             console.log(data)
 

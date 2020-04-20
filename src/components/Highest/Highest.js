@@ -7,7 +7,7 @@ export default function Highest(){
 
     //EFFECTS 
     useEffect(()=>{
-        fetch('https://flavortown-api.herokuapp.com/highest')
+      fetch(process.env.REACT_APP_API_ADDRESS+'/highest')
         .then(res=>res.json())
         .then(data=>setDisplayData(data))
     },[])
@@ -15,7 +15,7 @@ export default function Highest(){
     //HANDLERS 
     function handleClick(id){
         console.log("handleClick",id)
-      axios.post('https://flavortown-api.herokuapp.com/trending/handleclick',{id}).then(data=>window.open(data.data.sourceUrl,"_blank"))
+      axios.post(process.env.REACT_APP_API_ADDRESS+'/trending/handleclick',{id}).then(data=>window.open(data.data.sourceUrl,"_blank"))
     }
 
   //METHODS

@@ -8,7 +8,7 @@ export default function Trending (){
 
     //EFFECTS 
     useEffect(()=>{
-        fetch('https://flavortown-api.herokuapp.com/trending')
+        fetch(process.env.REACT_APP_API_ADDRESS+'/trending')
         .then(res=>res.json())
         .then(data=>{
             setDisplayData(data)
@@ -16,7 +16,7 @@ export default function Trending (){
       },[])
     //HANDLERS 
       function handleClick(id){
-        axios.post('https://flavortown-api.herokuapp.com/trending/handleclick',{id}).then(data=>window.open(data.data.sourceUrl,"_blank"))
+        axios.post(process.env.REACT_APP_API_ADDRESS+'/trending/handleclick',{id}).then(data=>window.open(data.data.sourceUrl,"_blank"))
       }
 
     //METHODS

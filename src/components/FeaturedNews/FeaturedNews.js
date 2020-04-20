@@ -1,14 +1,18 @@
 import React,{useState,useEffect} from 'react';
-import './FeaturedNews.css';
+import './FeaturedNews.css'
+
+const axios=require('axios');
+
 
 export default function FeaturedNews (){
   const [displayData,setDisplayData]=useState(null);
 
   useEffect(()=>{
-    fetch('https://flavortown-api.herokuapp.com/news')
-    .then(res=>res.json())
-    .then(data=>{setDisplayData(data)})
-
+    axios.get(process.env.REACT_APP_API_ADDRESS+'/news')
+    .then(res=>{
+      setDisplayData(res.data)
+    })
+    .catch(console.error)
   },[])
  
 

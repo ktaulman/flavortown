@@ -7,7 +7,7 @@ export default function GuyNews(){
 
     //GET API 
     useEffect(()=>{
-        fetch('https://flavortown-api.herokuapp.com/carousel')
+        fetch(process.env.REACT_APP_API_ADDRESS+'/carousel')
         .then(res=>res.json())
         .then(data=>setDisplayData(data))
     },[])

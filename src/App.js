@@ -21,7 +21,8 @@ import Guy from './components/guy.png'
 
 export default function App (){
   const [isGuyClicked,setIsGuyClicked]=useState(false);
-
+  console.log(process.env)
+  console.log('functiong App(){}')
 
   function SwitchButton(){
 

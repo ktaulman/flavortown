@@ -7,7 +7,7 @@ export default function Random () {
 
     //EFFECTS 
     useEffect(()=>{
-        fetch('https://flavortown-api.herokuapp.com/random')
+        fetch(process.env.REACT_APP_API_ADDRESS+'/random')
         .then(res=>res.json()).then(data=>setDisplayData(data))
         }
         ,[])
