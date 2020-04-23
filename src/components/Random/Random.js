@@ -26,7 +26,7 @@ export default function Random () {
 
     //RESPONSE RENDERING
         const renderInstructions= instructions.replace('instructions','').split('.').slice(0,-1).map(el=>
-            <li className="instructions__item">{el}</li>
+            <li className="instructions__item">{el.replace(/<[^>]*>?/gm, '')}</li>
         )
 
         const renderIngredients= extendedIngredients.map(ingredient=>

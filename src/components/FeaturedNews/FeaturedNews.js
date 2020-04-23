@@ -24,6 +24,10 @@ export default function FeaturedNews (){
     <article className="news">
       <h2 className="news__headline">Featured </h2>
       <div className="news__item">
+      <img 
+                    className="news__image"
+                    src={urlToImage} alt='' 
+                />
         <a className="news__title" href={url}>      {title}</a>
             
           <summary className="news__description">{description}</summary>
@@ -31,10 +35,7 @@ export default function FeaturedNews (){
                   <p className="news__author">
                   By:{author?author:null},{source.name}
                   </p>
-                  <img 
-                    className="news__image"
-                    src={urlToImage} alt='' 
-                />
+                 
         </div>
       </article>
   )}

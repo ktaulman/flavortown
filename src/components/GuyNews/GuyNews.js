@@ -9,7 +9,9 @@ export default function GuyNews(){
     useEffect(()=>{
         fetch(process.env.REACT_APP_API_ADDRESS+'/carousel')
         .then(res=>res.json())
-        .then(data=>setDisplayData(data))
+        .then(data=>{
+            console.log(data)
+            setDisplayData(data)})
     },[])
 
     //Rendering for Carousel
@@ -21,20 +23,21 @@ export default function GuyNews(){
 
     //if loaded 
     if(displayData[0]){
-        console.log('displayData mounted')
+
+       
         function Card({title,urlToImage,description,url,author,source}){
+            if(author===source.name){
+                author=null;
+            }
             return(
                 <div className="guyNews__card">
                 <a className="guyNews__cardTitle" href={url}>{title}</a>
                        
                         <summary className="guyNews__cardDescription">{description}</summary>
                 
-                            <p className="guyNews__cardAuthor">{`${author}, ${source.name}`} 
+                            <p className="guyNews__cardAuthor">{author?`${author},`:''} {source.name} 
                         </p>
-                        {/* <img 
-                            className="guyNews__cardImage"
-                            src={urlToImage} alt='' height={100} width={175}
-                        /> */}
+    
             </div>
             )
         }
@@ -50,7 +53,11 @@ export default function GuyNews(){
             <section className='guyNews__body'>
             <article className="guyNews__article">
                {displayData.map((card,index)=>{
-                const {title,urlToImage,url,author,source}=card;
+                const {title,urlToImage,url,source}=card;
+                let author=card.author;
+                
+                
+                if(index<3){
                 return(
                     <Card
                         key={index}
@@ -60,7 +67,7 @@ export default function GuyNews(){
                         author={author}
                         source={source}
                     />
-                )
+                )}
             })}
             </article>
 
