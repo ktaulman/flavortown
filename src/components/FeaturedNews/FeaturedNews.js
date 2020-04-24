@@ -33,7 +33,7 @@ export default function FeaturedNews (){
           <summary className="news__description">{description}</summary>
       
                   <p className="news__author">
-                  By:{author?author:null},{source.name}
+                  By:{author?author+',':null}{source.name}
                   </p>
                  
         </div>

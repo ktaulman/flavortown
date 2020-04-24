@@ -10,8 +10,13 @@ export default function GuyNews(){
         fetch(process.env.REACT_APP_API_ADDRESS+'/carousel')
         .then(res=>res.json())
         .then(data=>{
-            console.log(data)
-            setDisplayData(data)})
+            const random=()=>Math.floor(Math.random()*19)
+            const result=[];
+            for(let i=0;i<5;i++){
+                result.push(data[random()])
+            }
+            console.log(result)
+            setDisplayData(result)})
     },[])
 
     //Rendering for Carousel
@@ -50,28 +55,23 @@ export default function GuyNews(){
             
             <div className="guyNews">
             <h2 className="guyNews__title">BREAKING Guy Fieri News</h2>
-            <section className='guyNews__body'>
             <article className="guyNews__article">
                {displayData.map((card,index)=>{
                 const {title,urlToImage,url,source}=card;
                 let author=card.author;
-                
-                
-                if(index<3){
+               
                 return(
                     <Card
-                        key={index}
+                        key={'Card'+index}
                         title={title}
                         urlToImage={urlToImage?urlToImage:Guy}
                         url={url}
                         author={author}
                         source={source}
                     />
-                )}
+                )
             })}
             </article>
-
-            </section>
             </div>
            
             </>
