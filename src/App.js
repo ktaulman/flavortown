@@ -32,7 +32,7 @@ export default function App (){
     return(
       <div className='switchButton'>
         <button className='switchButton__button' onClick={()=>handleSwitch()}>
-        Guy! I need a Recipe 
+        {isGuyClicked?"Guy I Need a Recipe!":'Take Me Back'}
         
         </button>
       </div>
