@@ -18,7 +18,6 @@ export default function FeaturedNews (){
 
 
   if(displayData){
-    console.log(displayData)
     const {title,urlToImage,description,url,author,source}=displayData;
   return(
     <article className="news">

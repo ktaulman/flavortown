@@ -6,7 +6,6 @@ export default function SearchBar() {
     //STATES 
     const [searchInput,setSearchInput]=useState(null)
     const [resultData,setResultData]=useState([])
-    console.log('searchInput=',searchInput)
     //HANDLERS
     function handleInput(e){
         console.log(e.target.value)
@@ -24,18 +23,14 @@ export default function SearchBar() {
         setTimeout(()=>{setResultData([])},200)
     }
     function handleBackAgainClick(){
-        const search=document.querySelector('#search');
-        console.log(search.value)
+    
     }
 
     //USE EFFECT 
     useEffect(()=>{
-
         if(searchInput===null||'') return;
         axios.post(process.env.REACT_APP_API_ADDRESS+'/searchbar',{input:searchInput})
         .then(data=>{
-            console.log(data)
-
             setResultData(data.data)})
         .catch(console.error)
     },[searchInput])
@@ -52,6 +47,7 @@ export default function SearchBar() {
     return(
     
         <form className="searchbar" autoComplete="off" 
+            onMouseLeave={()=>setSearchInput('')}
             onBlur={()=>handleBlur()} 
             onClick={()=>handleBackAgainClick()}
             >
@@ -59,7 +55,8 @@ export default function SearchBar() {
                 <input id='search'
                 className="searchbar__input" placeholder='search flamin 
                 recipes...'
-                onChange={handleInput}></input>
+                onChange={handleInput}
+                ></input>
 
             </div>
             <ul className="searchbar__resultList" id="searchbar__results">

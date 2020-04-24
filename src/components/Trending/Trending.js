@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react';
-import axios from 'axios';
+
 
 
 export default function Trending (){
@@ -15,25 +15,23 @@ export default function Trending (){
         })
       },[])
     //HANDLERS 
-      function handleClick(id){
-        axios.post(process.env.REACT_APP_API_ADDRESS+'/trending/handleclick',{id}).then(data=>window.open(data.data.sourceUrl,"_blank"))
-      }
+   
 
     //METHODS
       const renderList=displayData.map((recipe,i)=>{
-        if(i<5){
-          return <li className="list__link" onClick={()=>handleClick(recipe.id)} key={`trending-${recipe.id}`}>
-              {recipe.title}
-              </li>
-            }
+        return(
+          <li >
+              <a className='list__link' href={recipe.sourceUrl} target='_blank' rel='noopener noreferrer' alt={'hyperlink to'+recipe.title}>{recipe.title}</a>
+           </li>
+          )
         })
       
      return( 
         <aside className='list'>
         <h2 className="list__header">Trending Recipes</h2>
-        <ul className="list__list">
+        <ol className="list__list">
             {renderList}
-        </ul>
+        </ol>
       </aside>
      )
 }

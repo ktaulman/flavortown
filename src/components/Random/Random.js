@@ -20,7 +20,6 @@ export default function Random () {
 
     //LOADED 
     if(displayData){
-        console.log(displayData)
         const {extendedIngredients, image, instructions, title,sourceUrl}=displayData;
 
 

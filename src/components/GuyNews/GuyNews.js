@@ -3,7 +3,7 @@ import Guy from '../guy.png'
 export default function GuyNews(){
     //STATE 
     const [displayData,setDisplayData]=useState([]);
-    const [carouselPosition,setCarouselPosition]=useState(0);
+  
 
     //GET API 
     useEffect(()=>{
@@ -15,7 +15,6 @@ export default function GuyNews(){
             for(let i=0;i<5;i++){
                 result.push(data[random()])
             }
-            console.log(result)
             setDisplayData(result)})
     },[])
 

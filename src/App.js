@@ -14,15 +14,14 @@ import Highest from "./components/Highest/Highest";
 import BannerAd from './components/BannerAd/BannerAd';
 import Random from './components/Random/Random'
 import  GuyNews from './components/GuyNews/GuyNews';
-import Guy from './components/guy.png'
+
 
 
 
 
 export default function App (){
   const [isGuyClicked,setIsGuyClicked]=useState(false);
-  console.log(process.env)
-  console.log('functiong App(){}')
+ 
 
   function SwitchButton(){
 
@@ -61,9 +60,9 @@ export default function App (){
       :
         
         <Main>
-        <div style={{margin:'30px 0px'}}>&nbsp;</div>
+
         <GuyNews/>
-        <div style={{margin:'30px 0px'}}>&nbsp;</div>
+    
           <FeaturedNews />
         
        

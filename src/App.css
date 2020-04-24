@@ -93,7 +93,9 @@ h2{
   transition-duration:0.4s;
   background:gold;
  color:black;
-
+}
+.switchButton__button:active,.switchButton__button:visited{
+  background:white;
 }
 
 /*  */
@@ -336,11 +338,8 @@ h2{
   font-size:1.2rem;
   flex:1 1 50%;
   text-align: center;
-  min-height: 300px;
 }
-.ingredients__title{
 
-}
 
 .ingredients__list{
   list-style: none;

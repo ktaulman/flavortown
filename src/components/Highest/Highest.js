@@ -1,5 +1,4 @@
 import React,{useState,useEffect } from 'react';
-import axios from 'axios';
 
 export default function Highest(){
     //STATE 
@@ -9,19 +8,17 @@ export default function Highest(){
     useEffect(()=>{
       fetch(process.env.REACT_APP_API_ADDRESS+'/highest')
         .then(res=>res.json())
-        .then(data=>setDisplayData(data))
+        .then(data=>{
+          setDisplayData(data)
+        })
     },[])
 
     //HANDLERS 
-    function handleClick(id){
-        console.log("handleClick",id)
-      axios.post(process.env.REACT_APP_API_ADDRESS+'/trending/handleclick',{id}).then(data=>window.open(data.data.sourceUrl,"_blank"))
-    }
 
   //METHODS
     const renderHighest=displayData.map(recipe=>
-      <li className="list__link" onClick={()=>handleClick(recipe.id)} key={`highest-${recipe.id}`}>
-          {recipe.title}
+      <li >
+          <a className='list__link' href={recipe.sourceUrl} target='_blank' rel='noopener noreferrer' alt={'hyperlink to'+recipe.title}>{recipe.title}</a>
           </li>
       )
     
