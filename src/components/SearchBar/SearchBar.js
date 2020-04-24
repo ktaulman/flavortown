@@ -15,16 +15,14 @@ export default function SearchBar() {
         }
     }
 
-    function handleClick(id){
-      axios.post(process.env.REACT_APP_API_ADDRESS+'/trending/handleclick',{id}).then(data=>window.open(data.data.sourceUrl,"_blank")).catch(console.error)
-    }
-
     function handleBlur(){
-        setTimeout(()=>{setResultData([])},200)
+        setTimeout(()=>{
+            setSearchInput('')
+            setResultData([])
+            }
+        ,200)
     }
-    function handleBackAgainClick(){
     
-    }
 
     //USE EFFECT 
     useEffect(()=>{
@@ -40,16 +38,14 @@ export default function SearchBar() {
     //MAPPING RENDER
     const renderList=resultData.map(result=>
         {return(
-            <li className="searchbar__resultItem" key={result.id} onClick={()=>handleClick(result.id)}>
-            {result.title}</li>)}
+            <li className="searchbar__resultItem" key={result.id}>
+            <a className="searchbar__resultItem" href={result.sourceUrl} target='_blank' rel='noopener noreferrer' alt={'link to'+result.title}>{result.title}</a></li>)}
         );
     //RENDERING
     return(
     
-        <form className="searchbar" autoComplete="off" 
-            onMouseLeave={()=>setSearchInput('')}
+        <form className="searchbar" autoComplete="off"
             onBlur={()=>handleBlur()} 
-            onClick={()=>handleBackAgainClick()}
             >
             <div className="searchbar__form">
                 <input id='search'
