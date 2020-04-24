@@ -20,7 +20,7 @@ export default function Trending (){
     //METHODS
       const renderList=displayData.map((recipe,i)=>{
         return(
-          <li >
+          <li key={'li+'+recipe.id}>
               <a className='list__link' href={recipe.sourceUrl} target='_blank' rel='noopener noreferrer' alt={'hyperlink to'+recipe.title}>{recipe.title}</a>
            </li>
           )

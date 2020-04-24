@@ -17,7 +17,7 @@ export default function Highest(){
 
   //METHODS
     const renderHighest=displayData.map(recipe=>
-      <li >
+      <li key={'li_'+recipe.id}>
           <a className='list__link' href={recipe.sourceUrl} target='_blank' rel='noopener noreferrer' alt={'hyperlink to'+recipe.title}>{recipe.title}</a>
           </li>
       )
