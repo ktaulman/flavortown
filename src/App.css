@@ -138,7 +138,6 @@ h2{
   height:100%;
 }
 .guyNews__article{
-  box-sizing:content-box;
   padding:2px;
   font-size:4rem;
   flex-grow:1;
@@ -147,7 +146,6 @@ h2{
 }
 .guyNews__card{
   min-width:30%;
-  box-sizing: border-box;
   display:flex;
   flex-direction:column;
   justify-content: center;
@@ -439,7 +437,6 @@ h2{
   .guyNews__card{
     min-width:40%;
     max-width:75%;
-    flex:2 1 100%;
   }
 
   .news{
