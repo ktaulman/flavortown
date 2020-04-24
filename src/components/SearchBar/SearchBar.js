@@ -38,8 +38,9 @@ export default function SearchBar() {
     //MAPPING RENDER
     const renderList=resultData.map(result=>
         {return(
-            <li className="searchbar__resultItem" key={result.id}>
-            <a className="searchbar__resultItem" href={result.sourceUrl} target='_blank' rel='noopener noreferrer' alt={'link to'+result.title}>{result.title}</a></li>)}
+            
+            <a  key={result.id} className="searchbar__resultItem" href={result.sourceUrl} target='_blank' rel='noopener noreferrer' alt={'link to'+result.title}>{result.title}</a>
+        )}
         );
     //RENDERING
     return(
@@ -55,9 +56,9 @@ export default function SearchBar() {
                 ></input>
 
             </div>
-            <ul className="searchbar__resultList" id="searchbar__results">
+            <div className="searchbar__resultList" id="searchbar__results">
                 {renderList}
-            </ul>
+            </div>
         </form>
 
        
