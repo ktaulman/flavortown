@@ -2,25 +2,26 @@
 
 ## Core Website Features 
 
-### 1. Interactive Search
-![](https://imgur.com/bAW5Ocg.gifv)
+### 1. Recipe Search
+![](https://media.giphy.com/media/H5vvd6wwtAi65tJZGy/giphy.gif)
 - - - - 
-Facial Recogniton provided by Clarifai's API
+Recipe Search queries powered by Spoonacular API and re-rendered via React Hooks.
 
-### 2. SignIn
-![](https://media.giphy.com/media/XDWTpB2Bd2bbMqcYnx/giphy.gif)
+### 2. Random Recipe Button
+![](https://media.giphy.com/media/izyK2fIIUgsgPw8mtV/giphy.gif)
 - - - - 
-Connects to Node server which reads hashed password from PostgresQL db and returns user data or error. 
+Activates server request for random recipe, Node server handles API calls and sending JSON response.
 
 
-### 3. Registration
-![](https://media.giphy.com/media/Kg9TrqMXM7h7dCmdYm/giphy.gif)
+### 3. Breaking News Section, Featured Food News Article, and Trending Recipes
+![](https://media.giphy.com/media/UQUnFDJfkszJJlP6jO/giphy.gif)
+![](https://media.giphy.com/media/W2tPdqNmss19IQ9Od3/giphy.gif)
 - - - -
-Connects to Node server which handles encryption, Postgres db insertion, and error handling.
+Upon visit loads server response to React component lifecycle requests from both NewsAPI and Spoonacular's API.
 
 ## Technologies Used 
 * HTML (_Semantic_)
-* CSS (_Tachyons Library_)
-* JS (_React, Node_)
-* SQL (PostgresQL)
-* npm modules (_express, bCrypt, Clarifai, knex, pg_) 
+* CSS (_Flexbox, Media Queries, BEM, Mobile-First Desgin_)
+* JS (_React, Node, JSON_)
+* API (Spoonacular, NewsAPI)
+* npm modules (_express, axios) 
