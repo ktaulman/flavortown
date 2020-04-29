@@ -1,68 +1,29 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# FLAVORTOWN: _Guy Fieri Inspired Food, News, and Recipe Website_
 
-## Available Scripts
+## Core Website Features 
 
-In the project directory, you can run:
+### 1. Recipe Search
+![](https://media.giphy.com/media/H5vvd6wwtAi65tJZGy/giphy.gif)
 
-### `npm start`
+Recipe Search queries powered by Spoonacular API and re-rendered via React Hooks.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### 2. Random Recipe Button
+![](https://media.giphy.com/media/izyK2fIIUgsgPw8mtV/giphy.gif)
 
-### `npm test`
+Activates server request for random recipe, Node server handles API calls and sending JSON response.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### 3. Breaking News Section, Featured Food News Article, and Trending Recipes
+![](https://media.giphy.com/media/UQUnFDJfkszJJlP6jO/giphy.gif)
+![](https://media.giphy.com/media/W2tPdqNmss19IQ9Od3/giphy.gif)
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Upon visit loads server response to React component lifecycle requests from both NewsAPI and Spoonacular's API.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Technologies Used 
+* HTML (_Semantic_)
+* CSS (_Flexbox, Media Queries, BEM, Mobile-First Desgin_)
+* JS (_React, Node, JSON_)
+* API (_Spoonacular, NewsAPI_)
+* npm modules (_express, axios_) 
